@@ -12,6 +12,8 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
     private JPanel pnlSidebar;
     private JPanel pnlBottombar;
     private JPanel pnlEditArea;
+    private JButton btnDrawLine = createButton("Line");
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -20,6 +22,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
     @Override
     public void run() {
         createGUI();
+        generateSidebarButton();
     }
     private void createGUI() {
         setSize(WIDTH,HEIGHT);
@@ -36,10 +39,32 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
         repaint();
         setVisible(true);
     }
+
+    private void generateSidebarButton() {
+        GridBagLayout layout = new GridBagLayout();
+        pnlSidebar.setLayout(layout);
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.anchor = GridBagConstraints.WEST;
+        constraints.weightx = 100;
+        constraints.weighty = 100;
+        addToPanel(pnlSidebar, btnDrawLine, constraints, 0, 0, 40, 20);
+    }
     private JPanel createPanel(Color c) {
         JPanel temp = new JPanel();
         temp.setBackground(c);
         return temp;
+    }
+    private JButton createButton(String str) {
+        JButton temp = new JButton(str);
+        temp.addActionListener(this);
+        return temp;
+    }
+    private void addToPanel(JPanel jp,Component c, GridBagConstraints constraints,int x, int y, int w, int h) {
+        constraints.gridx = x;
+        constraints.gridy = y;
+        constraints.gridwidth = w;
+        constraints.gridheight = h;
+        jp.add(c, constraints);
     }
 
     public static void main(String[] args) {
