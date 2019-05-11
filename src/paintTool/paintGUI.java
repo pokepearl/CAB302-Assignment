@@ -22,6 +22,26 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        Object src = e.getSource();
+        if (src==btnDrawPlot) {
+
+        } else if (src==btnDrawLine) {
+
+        } else if (src==btnDrawRect) {
+
+        } else if (src==btnDrawEcli) {
+
+        } else if (src==btnDrawPoly) {
+
+        } else if (src==btnDrawUndo) {
+
+        } else if (src==JM1) {
+
+        } else if (src==JM2) {
+
+        } else if (src==JM3) {
+
+        }
 
     }
 
