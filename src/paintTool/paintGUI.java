@@ -6,8 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class paintGUI extends JFrame implements ActionListener, Runnable {
-    private static final int WIDTH = 600;
-    private static final int HEIGHT = 500;
+    private static final int WIDTH = 691;
+    private static final int HEIGHT = 560;
     private JPanel pnlSidebar;
     private JPanel pnlBottombar;
     private JPanel pnlEditArea;
