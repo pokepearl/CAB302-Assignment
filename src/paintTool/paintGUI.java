@@ -18,6 +18,9 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
     private JButton btnDrawEcli = createButton("Eclipse");
     private JButton btnDrawPoly = createButton("Polygon");
     private JButton btnDrawUndo = createButton("Undo");
+    private JMenuBar menuBar;
+    private JMenu menu;
+    private JMenuItem JM1, JM2, JM3;
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -44,10 +47,17 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
         getContentPane().add(pnlBottombar,BorderLayout.SOUTH);
         getContentPane().add(pnlSidebar,BorderLayout.WEST);
         getContentPane().add(pnlEditArea,BorderLayout.CENTER);
+        createMenuBar();
+        setJMenuBar(menuBar);
         repaint();
         setVisible(true);
     }
 
+    private void createMenuBar() {
+        menuBar = new JMenuBar();
+        menu = new JMenu("Menu");
+        menuBar.add(menu);
+    }
     private void generateSidebarButton() {
         GridBagLayout layout = new GridBagLayout();
         pnlSidebar.setLayout(layout);
