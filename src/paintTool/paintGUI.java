@@ -60,7 +60,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
         pnlBottombar = createPanel(Color.GRAY);
         pnlSidebar = createPanel(Color.LIGHT_GRAY);
         pnlEditArea = createPanel(Color.WHITE);
-        getContentPane().add(pnlBottombar,BorderLayout.SOUTH);
+        //getContentPane().add(pnlBottombar,BorderLayout.SOUTH);
         getContentPane().add(pnlSidebar,BorderLayout.WEST);
         getContentPane().add(pnlEditArea,BorderLayout.CENTER);
         createMenuBar();
