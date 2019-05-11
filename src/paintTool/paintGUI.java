@@ -77,6 +77,9 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
         menuBar.add(JM1);
         menuBar.add(JM2);
         menuBar.add(JM3);
+        JM1.addActionListener(this);
+        JM2.addActionListener(this);
+        JM3.addActionListener(this);
     }
     private void generateSidebarButton() {
         GridBagLayout layout = new GridBagLayout();
@@ -85,6 +88,12 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
         constraints.anchor = GridBagConstraints.WEST;
         constraints.weightx = 0;
         constraints.weighty = 0;
+        btnDrawPlot.addActionListener(this);
+        btnDrawLine.addActionListener(this);
+        btnDrawRect.addActionListener(this);
+        btnDrawEcli.addActionListener(this);
+        btnDrawPoly.addActionListener(this);
+        btnDrawUndo.addActionListener(this);
         addToPanel(pnlSidebar, btnDrawPlot, constraints, 0, 0, 2, 1);
         addToPanel(pnlSidebar, btnDrawLine, constraints, 0, 1, 2, 1);
         addToPanel(pnlSidebar, btnDrawRect, constraints, 0, 2, 2, 1);
