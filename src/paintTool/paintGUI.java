@@ -12,7 +12,12 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
     private JPanel pnlSidebar;
     private JPanel pnlBottombar;
     private JPanel pnlEditArea;
+    private JButton btnDrawPlot = createButton("Plot");
     private JButton btnDrawLine = createButton("Line");
+    private JButton btnDrawRect = createButton("Rectangle");
+    private JButton btnDrawEcli = createButton("Eclipse");
+    private JButton btnDrawPoly = createButton("Polygon");
+    private JButton btnDrawUndo = createButton("Undo");
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -23,6 +28,9 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
     public void run() {
         createGUI();
         generateSidebarButton();
+        System.out.println(pnlSidebar.getWidth());
+        System.out.println(pnlEditArea.getWidth());
+        System.out.println(pnlEditArea.getHeight());
     }
     private void createGUI() {
         setSize(WIDTH,HEIGHT);
@@ -45,9 +53,14 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
         pnlSidebar.setLayout(layout);
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.anchor = GridBagConstraints.WEST;
-        constraints.weightx = 100;
-        constraints.weighty = 100;
-        addToPanel(pnlSidebar, btnDrawLine, constraints, 0, 0, 40, 20);
+        constraints.weightx = 0;
+        constraints.weighty = 0;
+        addToPanel(pnlSidebar, btnDrawPlot, constraints, 0, 0, 2, 1);
+        addToPanel(pnlSidebar, btnDrawLine, constraints, 0, 1, 2, 1);
+        addToPanel(pnlSidebar, btnDrawRect, constraints, 0, 2, 2, 1);
+        addToPanel(pnlSidebar, btnDrawEcli, constraints, 0, 3, 2, 1);
+        addToPanel(pnlSidebar, btnDrawPoly, constraints, 0, 4, 2, 1);
+        addToPanel(pnlSidebar, btnDrawUndo, constraints, 0, 5, 2, 1);
     }
     private JPanel createPanel(Color c) {
         JPanel temp = new JPanel();
