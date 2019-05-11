@@ -19,8 +19,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
     private JButton btnDrawPoly = createButton("Polygon");
     private JButton btnDrawUndo = createButton("Undo");
     private JMenuBar menuBar;
-    private JMenu menu;
-    private JMenuItem JM1, JM2, JM3;
+    private JMenu JM1, JM2, JM3;
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -55,8 +54,12 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
 
     private void createMenuBar() {
         menuBar = new JMenuBar();
-        menu = new JMenu("Menu");
-        menuBar.add(menu);
+        JM1 = new JMenu("New");
+        JM2 = new JMenu("Save");
+        JM3 = new JMenu("Load");
+        menuBar.add(JM1);
+        menuBar.add(JM2);
+        menuBar.add(JM3);
     }
     private void generateSidebarButton() {
         GridBagLayout layout = new GridBagLayout();
