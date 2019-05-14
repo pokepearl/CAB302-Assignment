@@ -26,7 +26,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
         if (src==btnDrawPlot) {
 
         } else if (src==btnDrawLine) {
-
+            drawLine(10, 10, 400, 400);
         } else if (src==btnDrawRect) {
 
         } else if (src==btnDrawEcli) {
@@ -67,6 +67,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
         setJMenuBar(menuBar);
         repaint();
         setVisible(true);
+
     }
 
     private void createMenuBar() {
@@ -117,6 +118,10 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
         constraints.gridwidth = w;
         constraints.gridheight = h;
         jp.add(c, constraints);
+    }
+    private void drawLine(int x1,int y1,int x2,int y2) {
+        Graphics g = pnlEditArea.getGraphics();
+        g.drawLine(x1, y1, x2, y2);
     }
 
     public static void main(String[] args) {
