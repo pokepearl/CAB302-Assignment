@@ -20,6 +20,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
     private JButton btnDrawUndo = createButton("Undo");
     private JMenuBar menuBar;
     private JMenu JM1, JM2, JM3;
+    private long waitTime = 0;
 
     ArrayList<Shape> savedObjects = new ArrayList<>();
 
@@ -31,11 +32,15 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
         if (src==btnDrawPlot) {
 
         } else if (src==btnDrawLine) {
-            ShapeLine temp = new ShapeLine();
-            temp.addToArray(10, 20);
-            //temp.addToArray(400, 400);
-            System.out.println(temp.printArray());
-            //drawLine(10, 10, 400, 400);
+            if (waitTime < System.currentTimeMillis()) {
+                waitTime = System.currentTimeMillis() + 500;
+                ShapeLine temp = new ShapeLine();
+                temp.addToArray(10, 20);
+                //temp.addToArray(400, 400);
+                System.out.println(temp.printArray());
+                //drawLine(10, 10, 400, 400);
+            }
+
         } else if (src==btnDrawRect) {
 
         } else if (src==btnDrawEcli) {
