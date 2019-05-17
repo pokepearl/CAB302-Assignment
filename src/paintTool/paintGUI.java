@@ -36,9 +36,10 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
                 waitTime = System.currentTimeMillis() + 500;
                 ShapeLine temp = new ShapeLine();
                 temp.addToArray(10, 20);
-                //temp.addToArray(400, 400);
+                temp.addToArray(400, 350);
                 System.out.println(temp.printArray());
                 //drawLine(10, 10, 400, 400);
+                temp.paintComponent(pnlEditArea.getGraphics());
             }
 
         } else if (src==btnDrawRect) {
