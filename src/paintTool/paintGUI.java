@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class paintGUI extends JFrame implements ActionListener, Runnable {
     private static final int WIDTH = 691;
@@ -19,6 +20,9 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
     private JButton btnDrawUndo = createButton("Undo");
     private JMenuBar menuBar;
     private JMenu JM1, JM2, JM3;
+
+    ArrayList<Shape> savedObjects = new ArrayList<>();
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
