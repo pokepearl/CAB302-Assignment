@@ -35,6 +35,6 @@ public class ShapeLine extends Shape{
             o++;
         }
         System.out.println(Arrays.toString(ycordArr));
-        //g.drawLine();
+        g.drawLine((int) xcordArr[0], (int) ycordArr[0], (int) xcordArr[1], (int) ycordArr[1]);
     }
 }
