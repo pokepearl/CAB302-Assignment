@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 public class ShapeLine extends Shape{
     private Map<Double, Double> points = new HashMap<>();
+    private String ShapeType;
 
     @Override
     public void addToArray(double x, double y) {
@@ -35,6 +36,21 @@ public class ShapeLine extends Shape{
             o++;
         }
         System.out.println(Arrays.toString(ycordArr));
-        g.drawLine((int) xcordArr[0], (int) ycordArr[0], (int) xcordArr[1], (int) ycordArr[1]);
+        if (xcordArr.length == 2) {
+            g.drawLine((int) xcordArr[0], (int) ycordArr[0], (int) xcordArr[1], (int) ycordArr[1]);
+        }
+
+    }
+    @Override
+    public int sizeOfArray(){
+        return points.size();
+    }
+    @Override
+    public void setShapeType(String value) {
+        this.ShapeType = value;
+    }
+    @Override
+    public String getShapeType() {
+        return ShapeType;
     }
 }

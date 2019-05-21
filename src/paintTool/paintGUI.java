@@ -4,9 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-public class paintGUI extends JFrame implements ActionListener, Runnable {
+public class paintGUI extends JFrame implements ActionListener, Runnable, MouseListener {
     private static final int WIDTH = 691;
     private static final int HEIGHT = 560;
     private JPanel pnlSidebar;
@@ -35,13 +37,16 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
             if (waitTime < System.currentTimeMillis()) {
                 waitTime = System.currentTimeMillis() + 500;
                 ShapeLine temp = new ShapeLine();
-                temp.addToArray(10, 20);
-                temp.addToArray(400, 350);
-                System.out.println(temp.printArray());
-                System.out.println(getCanvasX());
-                System.out.println(getCanvasY());
+                System.out.println("Shape LINE");
+                temp.setShapeType("LINE");
+                savedObjects.add(temp);
+                //System.out.println(temp.printArray());
+                //System.out.println(getCanvasX());
+                //System.out.println(getCanvasY());
                 //drawLine(10, 10, 400, 400);
-                temp.paintComponent(pnlEditArea.getGraphics());
+                //temp.paintComponent(pnlEditArea.getGraphics());
+
+                //Shape t2 = savedObjects.get(savedObjects.size() - 1);
             }
 
         } else if (src==btnDrawRect) {
@@ -59,6 +64,38 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
         } else if (src==JM3) {
 
         }
+
+    }
+    public void mouseClicked(MouseEvent e) {
+        if (waitTime < System.currentTimeMillis()) {
+            waitTime = System.currentTimeMillis() + 500;
+            System.out.println("Click Event");
+            System.out.println(savedObjects.size());
+            int size = savedObjects.size() - 1;
+            Shape t2 = savedObjects.get(size);
+            System.out.println(t2.getShapeType());
+            if (t2.getShapeType() == "LINE") {
+                if (t2.sizeOfArray() <= 2) {
+                    System.out.println(e.getX());
+                    System.out.println(e.getY());
+                    t2.addToArray(e.getX(), e.getY());
+                }
+
+            }
+            t2.paintComponent(pnlEditArea.getGraphics());
+            //repaint();
+        }
+    }
+    public void mousePressed(MouseEvent e) {
+
+    }
+    public void mouseReleased(MouseEvent e) {
+
+    }
+    public void mouseEntered(MouseEvent e) {
+
+    }
+    public void mouseExited(MouseEvent e) {
 
     }
 
@@ -82,6 +119,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
         getContentPane().add(pnlEditArea,BorderLayout.CENTER);
         createMenuBar();
         setJMenuBar(menuBar);
+        pnlEditArea.addMouseListener(this);
         repaint();
         setVisible(true);
 
