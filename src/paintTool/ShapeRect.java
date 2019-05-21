@@ -30,6 +30,8 @@ public class ShapeRect extends Shape{
         if (xcordArr.length == 2) {
             double width = xcordArr[1] - xcordArr[0];
             double height = ycordArr[1] - ycordArr[0];
+            System.out.println(width);
+            System.out.println(height);
             g.drawRect((int) xcordArr[0], (int) ycordArr[0], (int) width, (int) height);
         }
 
