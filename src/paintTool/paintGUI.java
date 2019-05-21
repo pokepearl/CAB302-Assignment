@@ -78,7 +78,13 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
             }
 
         } else if (src==JM1) {
-
+            System.out.println("JM1");
+            if (waitTime < System.currentTimeMillis()) {
+                waitTime = System.currentTimeMillis() + 1000;
+                System.out.println(savedObjects.size());
+                savedObjects.clear();
+                System.out.println(savedObjects.size());
+            }
         } else if (src==JM2) {
 
         } else if (src==JM3) {
