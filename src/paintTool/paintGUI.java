@@ -11,7 +11,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
     private static final int HEIGHT = 560;
     private JPanel pnlSidebar;
     private JPanel pnlBottombar;
-    private JPanel pnlEditArea;
+    public JPanel pnlEditArea;
     private JButton btnDrawPlot = createButton("Plot");
     private JButton btnDrawLine = createButton("Line");
     private JButton btnDrawRect = createButton("Rectangle");
@@ -38,6 +38,8 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
                 temp.addToArray(10, 20);
                 temp.addToArray(400, 350);
                 System.out.println(temp.printArray());
+                System.out.println(getCanvasX());
+                System.out.println(getCanvasY());
                 //drawLine(10, 10, 400, 400);
                 temp.paintComponent(pnlEditArea.getGraphics());
             }
@@ -142,5 +144,12 @@ public class paintGUI extends JFrame implements ActionListener, Runnable {
     public static void main(String[] args) {
         paintGUI GUI = new paintGUI();
         GUI.run();
+    }
+
+    public int getCanvasX() {
+        return pnlEditArea.getWidth();
+    }
+    public int getCanvasY() {
+        return pnlEditArea.getHeight();
     }
 }
