@@ -28,11 +28,21 @@ public class ShapeRect extends Shape{
         System.out.println(Arrays.toString(ycordArr));
 
         if (xcordArr.length == 2) {
-            double width = xcordArr[1] - xcordArr[0];
-            double height = ycordArr[1] - ycordArr[0];
+            double width = 0;
+            double height = 0;
+            if (xcordArr[1] > xcordArr[0]) {
+                width = xcordArr[1] - xcordArr[0];
+                height = ycordArr[1] - ycordArr[0];
+                g.drawRect((int) xcordArr[0], (int) ycordArr[0], (int) width, (int) height);
+            } else {
+                width = xcordArr[0] - xcordArr[1];
+                height = ycordArr[0] - ycordArr[1];
+                g.drawRect((int) xcordArr[1], (int) ycordArr[1], (int) width, (int) height);
+
+            }
+
             System.out.println(width);
             System.out.println(height);
-            g.drawRect((int) xcordArr[0], (int) ycordArr[0], (int) width, (int) height);
         }
 
     }
