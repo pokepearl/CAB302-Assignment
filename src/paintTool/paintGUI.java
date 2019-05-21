@@ -56,6 +56,12 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
             }
 
         } else if (src==btnDrawEcli) {
+            if (waitTime < System.currentTimeMillis()) {
+                waitTime = System.currentTimeMillis() + 500;
+                ShapeEclipse temp = new ShapeEclipse();
+                temp.setShapeType("ECLIPSE");
+                savedObjects.add(temp);
+            }
 
         } else if (src==btnDrawPoly) {
 
@@ -85,6 +91,10 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
                     t2.addToArray(e.getX(), e.getY());
                 }
             }else if (t2.getShapeType().equals("RECTANGLE")) {
+                if (t2.sizeOfArray() <= 1) {
+                    t2.addToArray(e.getX(), e.getY());
+                }
+            } else if (t2.getShapeType().equals("ECLIPSE")) {
                 if (t2.sizeOfArray() <= 1) {
                     t2.addToArray(e.getX(), e.getY());
                 }
