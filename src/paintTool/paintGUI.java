@@ -13,7 +13,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
     private static final int HEIGHT = 560;
     private JPanel pnlSidebar;
     private JPanel pnlBottombar;
-    public JPanel pnlEditArea;
+    private JPanel pnlEditArea;
     private JButton btnDrawPlot = createButton("Plot");
     private JButton btnDrawLine = createButton("Line");
     private JButton btnDrawRect = createButton("Rectangle");
@@ -24,7 +24,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
     private JMenu JM1, JM2, JM3;
     private long waitTime = 0;
 
-    ArrayList<Shape> savedObjects = new ArrayList<>();
+    private ArrayList<Shape> savedObjects = new ArrayList<>();
 
 
     @Override
@@ -48,6 +48,12 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
             }
 
         } else if (src==btnDrawRect) {
+            if (waitTime < System.currentTimeMillis()) {
+                waitTime = System.currentTimeMillis() + 500;
+                ShapeRect temp = new ShapeRect();
+                temp.setShapeType("RECTANGLE");
+                savedObjects.add(temp);
+            }
 
         } else if (src==btnDrawEcli) {
 
@@ -69,13 +75,17 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
             waitTime = System.currentTimeMillis() + 500;
             int size = savedObjects.size() - 1;
             Shape t2 = savedObjects.get(size);
-            if (t2.getShapeType() == "LINE") {
+            if (t2.getShapeType().equals("LINE")) {
                 if (t2.sizeOfArray() <= 1) {
                     t2.addToArray(e.getX(), e.getY());
                 }
 
-            } else if (t2.getShapeType() == "POINT") {
+            } else if (t2.getShapeType().equals("POINT")) {
                 if (t2.sizeOfArray() < 1) {
+                    t2.addToArray(e.getX(), e.getY());
+                }
+            }else if (t2.getShapeType().equals("RECTANGLE")) {
+                if (t2.sizeOfArray() <= 1) {
                     t2.addToArray(e.getX(), e.getY());
                 }
             }
@@ -171,10 +181,6 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
         constraints.gridwidth = w;
         constraints.gridheight = h;
         jp.add(c, constraints);
-    }
-    private void drawLine(int x1,int y1,int x2,int y2) {
-        Graphics g = pnlEditArea.getGraphics();
-        g.drawLine(x1, y1, x2, y2);
     }
 
     public static void main(String[] args) {
