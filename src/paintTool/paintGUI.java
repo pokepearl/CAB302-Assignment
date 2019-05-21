@@ -37,16 +37,8 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
             if (waitTime < System.currentTimeMillis()) {
                 waitTime = System.currentTimeMillis() + 500;
                 ShapeLine temp = new ShapeLine();
-                System.out.println("Shape LINE");
                 temp.setShapeType("LINE");
                 savedObjects.add(temp);
-                //System.out.println(temp.printArray());
-                //System.out.println(getCanvasX());
-                //System.out.println(getCanvasY());
-                //drawLine(10, 10, 400, 400);
-                //temp.paintComponent(pnlEditArea.getGraphics());
-
-                //Shape t2 = savedObjects.get(savedObjects.size() - 1);
             }
 
         } else if (src==btnDrawRect) {
@@ -69,21 +61,15 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
     public void mouseClicked(MouseEvent e) {
         if (waitTime < System.currentTimeMillis()) {
             waitTime = System.currentTimeMillis() + 500;
-            System.out.println("Click Event");
-            System.out.println(savedObjects.size());
             int size = savedObjects.size() - 1;
             Shape t2 = savedObjects.get(size);
-            System.out.println(t2.getShapeType());
             if (t2.getShapeType() == "LINE") {
-                if (t2.sizeOfArray() <= 2) {
-                    System.out.println(e.getX());
-                    System.out.println(e.getY());
+                if (t2.sizeOfArray() <= 1) {
                     t2.addToArray(e.getX(), e.getY());
                 }
 
             }
             t2.paintComponent(pnlEditArea.getGraphics());
-            //repaint();
         }
     }
     public void mousePressed(MouseEvent e) {
