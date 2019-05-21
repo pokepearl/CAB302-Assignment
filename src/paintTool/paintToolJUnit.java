@@ -22,7 +22,6 @@ public class paintToolJUnit {
         ShapePoint test = new ShapePoint();
         test.addToArray(102, 225);
         test.addToArray(95, 102);
-        System.out.println(test.printArray());
         assertEquals("{102.0=225.0, 95.0=102.0}", test.printArray());
     }
     @Test
@@ -48,5 +47,17 @@ public class paintToolJUnit {
         test.addToArray(1, 20);
         test.addToArray(132, 233);
         assertNotEquals(5, test.sizeOfArray());
+    }
+    @Test
+    public void testPointType() {
+        ShapePoint test = new ShapePoint();
+        test.setShapeType("POINT");
+        assertEquals("POINT", test.getShapeType());
+    }
+    @Test
+    public void testPointTypeFalse() {
+        ShapePoint test = new ShapePoint();
+        test.setShapeType("RECTANGLE");
+        assertNotEquals("POINT", test.getShapeType());
     }
 }
