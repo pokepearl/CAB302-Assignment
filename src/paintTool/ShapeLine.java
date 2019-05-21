@@ -21,21 +21,12 @@ public class ShapeLine extends Shape{
     @Override
     public void paintComponent(Graphics g) {
         Set<Double> xcord = points.keySet().stream().collect(Collectors.toSet());
-        double[] xcordArr = new double[xcord.size()];
+        double[] xcordArr = generatePointArrayX(xcord);
         Collection<Double> ycord = points.values();
-        int i = 0;
-        for (Double d: xcord) {
-            xcordArr[i] = d;
-            i++;
-        }
+        double[] ycordArr = generatePointArrayY(ycord);
         System.out.println(Arrays.toString(xcordArr));
-        double[] ycordArr = new double[ycord.size()];
-        int o = 0;
-        for (Double d: ycord) {
-            ycordArr[o] = d;
-            o++;
-        }
         System.out.println(Arrays.toString(ycordArr));
+
         if (xcordArr.length == 2) {
             g.drawLine((int) xcordArr[0], (int) ycordArr[0], (int) xcordArr[1], (int) ycordArr[1]);
         }
