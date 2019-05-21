@@ -32,6 +32,12 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
 
         Object src = e.getSource();
         if (src==btnDrawPlot) {
+            if (waitTime < System.currentTimeMillis()) {
+                waitTime = System.currentTimeMillis() + 500;
+                ShapePoint temp = new ShapePoint();
+                temp.setShapeType("POINT");
+                savedObjects.add(temp);
+            }
 
         } else if (src==btnDrawLine) {
             if (waitTime < System.currentTimeMillis()) {
@@ -68,8 +74,14 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
                     t2.addToArray(e.getX(), e.getY());
                 }
 
+            } else if (t2.getShapeType() == "POINT") {
+                if (t2.sizeOfArray() < 1) {
+                    t2.addToArray(e.getX(), e.getY());
+                }
             }
             t2.paintComponent(pnlEditArea.getGraphics());
+            savedObjects.remove(size);
+            savedObjects.add(t2);
         }
     }
     public void mousePressed(MouseEvent e) {

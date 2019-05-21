@@ -28,7 +28,7 @@ public class ShapePoint extends Shape{
         System.out.println(Arrays.toString(ycordArr));
 
         if (xcordArr.length == 1) {
-            g.drawLine((int) xcordArr[0], (int) ycordArr[0], (int) xcordArr[1], (int) ycordArr[1]);
+            g.drawLine((int) xcordArr[0], (int) ycordArr[0], (int) xcordArr[0], (int) ycordArr[0]);
         }
 
     }
