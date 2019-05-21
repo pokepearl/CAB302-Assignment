@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="504ab18b-272c-4469-b894-7a5e5eb78b41" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/paintTool/paintToolJUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment_2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paintTool/paintGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/paintGUI.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/paintTool/paintGUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="107" column="54" selection-start-line="107" selection-start-column="54" selection-end-line="107" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#7630#7631#0" expanded="true" />
+                <element signature="e#7675#7676#0" expanded="true" />
+                <element signature="e#7705#7706#0" expanded="true" />
+                <element signature="e#7751#7752#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/paintTool/paintToolJUnit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/paintTool/ShapeEclipse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="404">
+              <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/paintTool/ShapeRect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="39" column="84" selection-start-line="39" selection-start-column="84" selection-end-line="39" selection-end-column="84" />
+              <folding>
+                <element signature="e#284#285#0" expanded="true" />
+                <element signature="e#316#317#0" expanded="true" />
+                <element signature="e#364#365#0" expanded="true" />
+                <element signature="e#404#405#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/paintTool/ShapePoint.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/paintTool/Shape.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/paintTool/ShapeLine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1113#1114#0" expanded="true" />
+                <element signature="e#1151#1152#0" expanded="true" />
+                <element signature="e#1200#1201#0" expanded="true" />
+                <element signature="e#1232#1233#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>paintComponent</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/paintTool/drawLine.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/drawObject.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/ShapePlot.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/ShapePoint.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/ShapeLine.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/ShapeRect.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/Shape.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/ShapeEclipse.java" />
+        <option value="$PROJECT_DIR$/src/paintToolTests/paintToolJUnit.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/paintGUI.java" />
+        <option value="$PROJECT_DIR$/tests/paintToolJUnit.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/paintToolJUnit.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="952" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Assignment_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment_2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment_2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Assignment_2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="paintTool" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="paintTool" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\REDACTED\Assignment_2" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.JUnit">
+    <configuration name="paintGUI" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="paintTool.paintGUI" />
+      <module name="Assignment_2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JUnit" type="JUnit" factoryName="JUnit">
+      <module name="Assignment_2" />
+      <option name="PACKAGE_NAME" value="paintTool" />
+      <option name="MAIN_CLASS_NAME" value="paintTool.paintToolJUnit" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.paintGUI" />
+      <item itemvalue="JUnit.JUnit" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="504ab18b-272c-4469-b894-7a5e5eb78b41" name="Default Changelist" comment="" />
+      <created>1556513550900</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556513550900</updated>
+      <workItem from="1556513554348" duration="100000" />
+      <workItem from="1557302972635" duration="49000" />
+      <workItem from="1557407606229" duration="1363000" />
+      <workItem from="1557484945601" duration="1772000" />
+      <workItem from="1557553058250" duration="4249000" />
+      <workItem from="1557719761755" duration="29000" />
+      <workItem from="1557825119854" duration="3902000" />
+      <workItem from="1558056215259" duration="4887000" />
+      <workItem from="1558402325443" duration="4743000" />
+      <workItem from="1558413831389" duration="2897000" />
+      <workItem from="1558439882030" duration="696000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add IntelliJ IDEA project files.">
+      <created>1556513607899</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556513607899</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initialise package and main class">
+      <created>1557408048254</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1557408048255</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Setup Swing imports and create main function">
+      <created>1557408183520</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1557408183520</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add Panels for elements in UI (somewhat placeholders)">
+      <created>1557485630482</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1557485630482</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add first button to sidebar (Line Button)">
+      <created>1557486569979</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1557486569979</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add buttons for other required functionality.">
+      <created>1557576749254</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1557576749254</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add initial code for implementing the Menu in swing.">
+      <created>1557578508360</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1557578508360</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add non-functional buttons to menu bar.">
+      <created>1557579003802</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1557579003802</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Remove old placeholder for menu bar.">
+      <created>1557579056453</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1557579056453</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Create placeholder action structure for currently implemented buttons.">
+      <created>1557579272328</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1557579272328</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add event listeners to currently implemented buttons.">
+      <created>1557579442830</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1557579442831</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Comment out bottom bar (not currently in use).">
+      <created>1557579548016</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1557579548016</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Modify default width/height vars to set the main drawing area to a square.">
+      <created>1557579743165</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1557579743165</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Implement rudimentary line drawing function.">
+      <created>1557835673435</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1557835673435</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Start the reimplementation of the drawing routine into abstracted classes.">
+      <created>1558057879119</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1558057879119</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Implement functions in Shape to write coords to a Map.">
+      <created>1558059058463</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1558059058463</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add basic debouncing code as clicking a button executes code twice.">
+      <created>1558059111443</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1558059111443</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Add code to convert map to arrays of both X and Y values for drawing.">
+      <created>1558060270253</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1558060270253</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Cast array values as Int and draw the line in the graphics region.">
+      <created>1558060507795</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1558060507795</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add functions to get width and height of drawing region.">
+      <created>1558403207760</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1558403207760</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Allow the user to select points on the canvas to draw a line between them.">
+      <created>1558404585386</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1558404585386</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Add initial class for drawing points.">
+      <created>1558404750467</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1558404750467</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Abastract the function responsible for converting the position map to arrays.">
+      <created>1558405095062</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1558405095062</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Implement drawing points.">
+      <created>1558405296640</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1558405296640</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Implement drawing rectangles.">
+      <created>1558405669224</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1558405669224</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Attempt implementing undo feature.">
+      <created>1558414374577</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1558414374577</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Fix issue with rectangle generating a negative width/height.">
+      <created>1558415029736</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1558415029736</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Add functionality to draw eclipses/ovals.">
+      <created>1558430130599</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1558430130599</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Attempt implementation of undo feature.">
+      <created>1558430621933</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1558430621933</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Start implementation of 'New File' (clearing canvas and array).">
+      <created>1558430822152</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1558430822152</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="JUnit - 2019.05.21 at 22h 09m 09s.xml">
+      <configuration name="JUnit" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="24687000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="762" y="0" width="781" height="830" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31206658" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.32664755" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.14305949" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.38120806" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.32719547" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.14305949" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add buttons for other required functionality." />
+    <MESSAGE value="Add initial code for implementing the Menu in swing." />
+    <MESSAGE value="Add non-functional buttons to menu bar." />
+    <MESSAGE value="Remove old placeholder for menu bar." />
+    <MESSAGE value="Create placeholder action structure for currently implemented buttons." />
+    <MESSAGE value="Add event listeners to currently implemented buttons." />
+    <MESSAGE value="Comment out bottom bar (not currently in use)." />
+    <MESSAGE value="Modify default width/height vars to set the main drawing area to a square." />
+    <MESSAGE value="Implement rudimentary line drawing function." />
+    <MESSAGE value="Start the reimplementation of the drawing routine into abstracted classes." />
+    <MESSAGE value="Implement functions in Shape to write coords to a Map." />
+    <MESSAGE value="Add basic debouncing code as clicking a button executes code twice." />
+    <MESSAGE value="Add code to convert map to arrays of both X and Y values for drawing." />
+    <MESSAGE value="Cast array values as Int and draw the line in the graphics region." />
+    <MESSAGE value="Add functions to get width and height of drawing region." />
+    <MESSAGE value="Allow the user to select points on the canvas to draw a line between them." />
+    <MESSAGE value="Add initial class for drawing points." />
+    <MESSAGE value="Abastract the function responsible for converting the position map to arrays." />
+    <MESSAGE value="Implement drawing points." />
+    <MESSAGE value="Implement drawing rectangles." />
+    <MESSAGE value="Attempt implementing undo feature." />
+    <MESSAGE value="Fix issue with rectangle generating a negative width/height." />
+    <MESSAGE value="Add functionality to draw eclipses/ovals." />
+    <MESSAGE value="Attempt implementation of undo feature." />
+    <MESSAGE value="Start implementation of 'New File' (clearing canvas and array)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Start implementation of 'New File' (clearing canvas and array)." />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/paintTool/drawObject.java" />
+    <entry file="file://$PROJECT_DIR$/src/paintTool/ShapeRect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="39" column="84" selection-start-line="39" selection-start-column="84" selection-end-line="39" selection-end-column="84" />
+          <folding>
+            <element signature="e#284#285#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/Shape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/ShapeLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1113#1114#0" expanded="true" />
+            <element signature="e#1151#1152#0" expanded="true" />
+            <element signature="e#1200#1201#0" expanded="true" />
+            <element signature="e#1232#1233#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/ShapePoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/ShapeEclipse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/paintGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="107" column="54" selection-start-line="107" selection-start-column="54" selection-end-line="107" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7630#7631#0" expanded="true" />
+            <element signature="e#7675#7676#0" expanded="true" />
+            <element signature="e#7705#7706#0" expanded="true" />
+            <element signature="e#7751#7752#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/paintToolJUnit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Assignment_2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

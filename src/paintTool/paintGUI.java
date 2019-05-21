@@ -105,6 +105,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
             } else if (t2.getShapeType().equals("POINT")) {
                 if (t2.sizeOfArray() < 1) {
                     t2.addToArray(e.getX(), e.getY());
+                    System.out.println(t2.printArray());
                 }
             }else if (t2.getShapeType().equals("RECTANGLE")) {
                 if (t2.sizeOfArray() <= 1) {
