@@ -21,7 +21,9 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
     private JButton btnDrawPoly = createButton("Polygon");
     private JButton btnDrawUndo = createButton("Undo");
     private JMenuBar menuBar;
-    private JMenu JM1, JM2, JM3;
+    private JMenu file;
+    private JMenuItem clear,save,load;
+
     private long waitTime = 0;
 
     private ArrayList<Shape> savedObjects = new ArrayList<>();
@@ -77,22 +79,24 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
                 }
             }
 
-        } else if (src==JM1) {
+        } else if (src==clear) {
             System.out.println("JM1");
             if (waitTime < System.currentTimeMillis()) {
                 waitTime = System.currentTimeMillis() + 1000;
                 System.out.println(savedObjects.size());
                 savedObjects.clear();
                 System.out.println(savedObjects.size());
+                repaint();
             }
-        } else if (src==JM2) {
+        } else if (src==save) {
 
-        } else if (src==JM3) {
+        } else if (src==load) {
 
         }
 
     }
     public void mouseClicked(MouseEvent e) {
+        Object src = e.getSource();
         if (waitTime < System.currentTimeMillis()) {
             waitTime = System.currentTimeMillis() + 500;
             int size = savedObjects.size() - 1;
@@ -162,15 +166,17 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
 
     private void createMenuBar() {
         menuBar = new JMenuBar();
-        JM1 = new JMenu("New");
-        JM2 = new JMenu("Save");
-        JM3 = new JMenu("Load");
-        menuBar.add(JM1);
-        menuBar.add(JM2);
-        menuBar.add(JM3);
-        JM1.addActionListener(this);
-        JM2.addActionListener(this);
-        JM3.addActionListener(this);
+        file = new JMenu("File");
+        clear = new JMenuItem("New");
+        save = new JMenuItem("Save");
+        load = new JMenuItem("Load");
+        file.add(clear);
+        file.add(save);
+        file.add(load);
+        menuBar.add(file);
+        clear.addActionListener(this);
+        save.addActionListener(this);
+        load.addActionListener(this);
     }
     private void generateSidebarButton() {
         GridBagLayout layout = new GridBagLayout();
