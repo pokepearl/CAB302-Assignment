@@ -14,7 +14,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
     private static final int HEIGHT = 560;
     private JPanel pnlSidebar;
     private JPanel pnlBottombar;
-    private JPanel pnlEditArea;
+    public JPanel pnlEditArea;
     private JButton btnDrawPlot = createButton("Plot");
     private JButton btnDrawLine = createButton("Line");
     private JButton btnDrawRect = createButton("Rectangle");
@@ -95,7 +95,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
             if (resultVal==JFileChooser.APPROVE_OPTION) {
                 File selFile = fileSelect.getSelectedFile();
                 FileHandler fileOperation = new FileHandler();
-                fileOperation.startSaveFile(selFile, savedObjects);
+                fileOperation.startSaveFile(selFile, savedObjects, pnlEditArea.getWidth(), pnlEditArea.getHeight());
 
             }
         } else if (src==load) {

@@ -1,6 +1,8 @@
 package paintTool;
 
 import java.awt.*;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -46,9 +48,17 @@ public class ShapeLine extends Shape{
     }
     @Override
     public String vecFileLine(int WindowX, int WindowY) {
+        DecimalFormat df = new DecimalFormat("#.##");
+        df.setRoundingMode(RoundingMode.CEILING);
+        System.out.println(WindowX);
+        System.out.println(WindowY);
+        LinkedList<Double> xcord = points.keySet().stream().collect(Collectors.toCollection(LinkedList::new));
+        LinkedList<Double> ycord = points.values().stream().collect(Collectors.toCollection(LinkedList::new));
         String finalResponse = "";
         finalResponse = finalResponse.concat(getShapeType());
-        System.out.println(finalResponse);
+        for (int i = 0; i<xcord.size(); i++) {
+            finalResponse = finalResponse.concat(" " + df.format(xcord.get(i) / WindowX) + " " + df.format(ycord.get(i) / WindowY));
+        }
         return finalResponse;
         //return "";
     }

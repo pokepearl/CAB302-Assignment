@@ -4,11 +4,7 @@
     <list default="true" id="504ab18b-272c-4469-b894-7a5e5eb78b41" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/paintTool/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paintTool/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paintTool/ShapeEclipse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/ShapeEclipse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/paintTool/ShapeLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/ShapeLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paintTool/ShapePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/ShapePoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paintTool/ShapeRect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/ShapeRect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/paintTool/paintGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/paintGUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,31 +22,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/paintTool/paintGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+            <state relative-caret-position="221">
+              <caret line="97" column="115" selection-start-line="97" selection-start-column="115" selection-end-line="97" selection-end-column="115" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8369#8370#0" expanded="true" />
-                <element signature="e#8445#8446#0" expanded="true" />
+                <element signature="e#8418#8419#0" expanded="true" />
+                <element signature="e#8494#8495#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/paintTool/ShapeRect.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="22" column="110" selection-start-line="22" selection-start-column="110" selection-end-line="22" selection-end-column="110" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/paintTool/ShapeEclipse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="22" column="110" selection-start-line="22" selection-start-column="110" selection-end-line="22" selection-end-column="110" />
             </state>
           </provider>
         </entry>
@@ -58,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/paintTool/FileHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+            <state relative-caret-position="238">
+              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,32 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/paintTool/ShapePoint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="22" column="110" selection-start-line="22" selection-start-column="110" selection-end-line="22" selection-end-column="110" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/paintTool/Shape.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/paintTool/ShapeLine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="110" />
+            <state relative-caret-position="274">
+              <caret line="59" column="107" lean-forward="true" selection-start-line="59" selection-start-column="107" selection-end-line="59" selection-end-column="107" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,13 +83,13 @@
         <option value="$PROJECT_DIR$/src/paintToolTests/paintToolJUnit.java" />
         <option value="$PROJECT_DIR$/tests/paintToolJUnit.java" />
         <option value="$PROJECT_DIR$/src/paintTool/paintToolJUnit.java" />
-        <option value="$PROJECT_DIR$/src/paintTool/paintGUI.java" />
-        <option value="$PROJECT_DIR$/src/paintTool/FileHandler.java" />
-        <option value="$PROJECT_DIR$/src/paintTool/ShapeLine.java" />
         <option value="$PROJECT_DIR$/src/paintTool/Shape.java" />
         <option value="$PROJECT_DIR$/src/paintTool/ShapePoint.java" />
         <option value="$PROJECT_DIR$/src/paintTool/ShapeRect.java" />
         <option value="$PROJECT_DIR$/src/paintTool/ShapeEclipse.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/paintGUI.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/FileHandler.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/ShapeLine.java" />
       </list>
     </option>
   </component>
@@ -257,7 +214,7 @@
       <workItem from="1558413831389" duration="2897000" />
       <workItem from="1558439882030" duration="2279000" />
       <workItem from="1558610708248" duration="1322000" />
-      <workItem from="1558656197017" duration="3623000" />
+      <workItem from="1558656197017" duration="4363000" />
     </task>
     <task id="LOCAL-00001" summary="Add IntelliJ IDEA project files.">
       <created>1556513607899</created>
@@ -525,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558662014349</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Rewrite shape point array generation to not shuffle order of points.">
+      <created>1558663409391</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1558663409391</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -561,7 +525,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31215000" />
+    <option name="totallyTimeSpent" value="31955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -574,7 +538,7 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.32719547" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.32719547" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -584,7 +548,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.3243626" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3243626" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -625,7 +589,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implement rudimentary line drawing function." />
     <MESSAGE value="Start the reimplementation of the drawing routine into abstracted classes." />
     <MESSAGE value="Implement functions in Shape to write coords to a Map." />
     <MESSAGE value="Add basic debouncing code as clicking a button executes code twice." />
@@ -650,7 +613,8 @@
     <MESSAGE value="Get the file selected by the save box." />
     <MESSAGE value="Start implementing the generation of the instructions for the file." />
     <MESSAGE value="Implement abstracted function to generate the instruction to draw the shape." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement abstracted function to generate the instruction to draw the shape." />
+    <MESSAGE value="Rewrite shape point array generation to not shuffle order of points." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rewrite shape point array generation to not shuffle order of points." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/paintTool/drawObject.java" />
@@ -661,55 +625,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/paintTool/paintGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8369#8370#0" expanded="true" />
-            <element signature="e#8445#8446#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/paintTool/FileHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/paintTool/Shape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/paintTool/ShapeLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="110" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/paintTool/ShapePoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="22" column="110" selection-start-line="22" selection-start-column="110" selection-end-line="22" selection-end-column="110" />
         </state>
       </provider>
     </entry>
@@ -724,6 +639,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="22" column="110" selection-start-line="22" selection-start-column="110" selection-end-line="22" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/ShapePoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="22" column="110" selection-start-line="22" selection-start-column="110" selection-end-line="22" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/paintGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="97" column="115" selection-start-line="97" selection-start-column="115" selection-end-line="97" selection-end-column="115" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8418#8419#0" expanded="true" />
+            <element signature="e#8494#8495#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/Shape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/FileHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/ShapeLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="59" column="107" lean-forward="true" selection-start-line="59" selection-start-column="107" selection-end-line="59" selection-end-column="107" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
