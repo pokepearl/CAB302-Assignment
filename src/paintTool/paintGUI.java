@@ -23,6 +23,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
     private JMenuBar menuBar;
     private JMenu file;
     private JMenuItem clear,save,load;
+    private JFileChooser fileSelect = new JFileChooser();
 
     private long waitTime = 0;
 
@@ -89,9 +90,9 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
                 repaint();
             }
         } else if (src==save) {
-
+            int resultVal = fileSelect.showSaveDialog(this);
         } else if (src==load) {
-
+            int resultVal = fileSelect.showOpenDialog(this);
         }
 
     }
