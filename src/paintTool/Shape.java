@@ -29,4 +29,5 @@ public abstract class Shape {
         }
         return ycordArr;
     }
+    public abstract String vecFileLine(int WindowX, int WindowY);
 }

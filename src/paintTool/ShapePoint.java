@@ -44,4 +44,8 @@ public class ShapePoint extends Shape{
     public String getShapeType() {
         return ShapeType;
     }
+    @Override
+    public String vecFileLine(int WindowX, int WindowY) {
+        return "";
+    }
 }

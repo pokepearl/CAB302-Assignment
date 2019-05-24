@@ -44,4 +44,11 @@ public class ShapeLine extends Shape{
     public String getShapeType() {
         return ShapeType;
     }
+    @Override
+    public String vecFileLine(int WindowX, int WindowY) {
+        String finalResponse = "";
+        finalResponse = finalResponse + getShapeType();
+        System.out.println(finalResponse);
+        return "";
+    }
 }
