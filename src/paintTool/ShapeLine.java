@@ -20,7 +20,7 @@ public class ShapeLine extends Shape{
 
     @Override
     public void paintComponent(Graphics g) {
-        Set<Double> xcord = points.keySet().stream().collect(Collectors.toSet());
+        LinkedList<Double> xcord = points.keySet().stream().collect(Collectors.toCollection(LinkedList::new));
         double[] xcordArr = generatePointArrayX(xcord);
         Collection<Double> ycord = points.values();
         double[] ycordArr = generatePointArrayY(ycord);
@@ -47,8 +47,9 @@ public class ShapeLine extends Shape{
     @Override
     public String vecFileLine(int WindowX, int WindowY) {
         String finalResponse = "";
-        finalResponse = finalResponse + getShapeType();
+        finalResponse = finalResponse.concat(getShapeType());
         System.out.println(finalResponse);
-        return "";
+        return finalResponse;
+        //return "";
     }
 }

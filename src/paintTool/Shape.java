@@ -2,6 +2,7 @@ package paintTool;
 
 import java.awt.*;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.Set;
 
 public abstract class Shape {
@@ -11,7 +12,7 @@ public abstract class Shape {
     public abstract void setShapeType(String value);
     public abstract String getShapeType();
     public abstract void paintComponent(Graphics g);
-    public double[] generatePointArrayX(Set<Double> xcord) {
+    public double[] generatePointArrayX(LinkedList<Double> xcord) {
         double[] xcordArr = new double[xcord.size()];
         int i = 0;
         for (Double d: xcord) {

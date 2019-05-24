@@ -20,7 +20,7 @@ public class ShapeRect extends Shape{
 
     @Override
     public void paintComponent(Graphics g) {
-        Set<Double> xcord = points.keySet().stream().collect(Collectors.toSet());
+        LinkedList<Double> xcord = points.keySet().stream().collect(Collectors.toCollection(LinkedList::new));
         double[] xcordArr = generatePointArrayX(xcord);
         Collection<Double> ycord = points.values();
         double[] ycordArr = generatePointArrayY(ycord);
