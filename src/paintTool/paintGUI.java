@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
 import java.util.ArrayList;
 
 public class paintGUI extends JFrame implements ActionListener, Runnable, MouseListener {
@@ -91,6 +92,12 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
             }
         } else if (src==save) {
             int resultVal = fileSelect.showSaveDialog(this);
+            if (resultVal==JFileChooser.APPROVE_OPTION) {
+                File selFile = fileSelect.getSelectedFile();
+                FileHandler fileOperation = new FileHandler();
+                fileOperation.startSaveFile(selFile, savedObjects);
+
+            }
         } else if (src==load) {
             int resultVal = fileSelect.showOpenDialog(this);
         }
