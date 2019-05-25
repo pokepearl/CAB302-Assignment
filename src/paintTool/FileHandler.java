@@ -44,4 +44,14 @@ public class FileHandler {
             }
         }
     }
+    public String getFileExt(File file) {
+        String fileExt = null;
+        String str = file.getName();
+        int i = str.lastIndexOf('.');
+
+        if (i > 0 &&  i < str.length() - 1) {
+            fileExt = str.substring(i+1).toLowerCase();
+        }
+        return fileExt;
+    }
 }

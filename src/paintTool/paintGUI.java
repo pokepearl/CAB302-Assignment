@@ -1,5 +1,7 @@
 package paintTool;
 
+import org.junit.platform.commons.util.ModuleUtils;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
+import java.io.FileFilter;
 import java.util.ArrayList;
 
 public class paintGUI extends JFrame implements ActionListener, Runnable, MouseListener {
@@ -91,6 +94,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
                 repaint();
             }
         } else if (src==save) {
+            fileSelect.setFileFilter(new vecFilter());
             int resultVal = fileSelect.showSaveDialog(this);
             if (resultVal==JFileChooser.APPROVE_OPTION) {
                 File selFile = fileSelect.getSelectedFile();
