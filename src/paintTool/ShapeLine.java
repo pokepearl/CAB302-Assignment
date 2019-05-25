@@ -60,6 +60,5 @@ public class ShapeLine extends Shape{
             finalResponse = finalResponse.concat(" " + df.format(xcord.get(i) / WindowX) + " " + df.format(ycord.get(i) / WindowY));
         }
         return finalResponse;
-        //return "";
     }
 }
