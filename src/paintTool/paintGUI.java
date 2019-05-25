@@ -1,7 +1,5 @@
 package paintTool;
 
-import org.junit.platform.commons.util.ModuleUtils;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,7 +7,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
-import java.io.FileFilter;
 import java.util.ArrayList;
 
 public class paintGUI extends JFrame implements ActionListener, Runnable, MouseListener {
@@ -65,7 +62,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
         } else if (src==btnDrawEcli) {
             if (waitTime < System.currentTimeMillis()) {
                 waitTime = System.currentTimeMillis() + 500;
-                ShapeEclipse temp = new ShapeEclipse();
+                ShapeEllipse temp = new ShapeEllipse();
                 temp.setShapeType("ECLIPSE");
                 savedObjects.add(temp);
             }

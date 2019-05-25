@@ -4,7 +4,7 @@ import java.awt.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class ShapeEclipse extends Shape{
+public class ShapeEllipse extends Shape{
     private Map<Double, Double> points = new LinkedHashMap<>();
     private String ShapeType;
 
