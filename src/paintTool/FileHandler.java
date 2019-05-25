@@ -24,7 +24,7 @@ public class FileHandler {
         for (int i = 0; i < shapeArray.size(); i++) {
             Shape t2 = shapeArray.get(i);
             //String response = "";
-            String response = t2.vecFileLine(width, height);
+            String response = t2.vecFileLine(width, height, t2.getLinkedX(), t2.getLinkedY());
             System.out.println(response);
 
 

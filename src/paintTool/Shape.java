@@ -1,13 +1,15 @@
 package paintTool;
 
 import java.awt.*;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.Set;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public abstract class Shape {
     public abstract void addToArray(double x, double y);
     public abstract String printArray();
+    public abstract Map<Double, Double> returnArray();
     public abstract int sizeOfArray();
     public abstract void setShapeType(String value);
     public abstract String getShapeType();
@@ -30,5 +32,22 @@ public abstract class Shape {
         }
         return ycordArr;
     }
-    public abstract String vecFileLine(int WindowX, int WindowY);
+    public LinkedList<Double> getLinkedX() {
+        return returnArray().keySet().stream().collect(Collectors.toCollection(LinkedList::new));
+    }
+    public LinkedList<Double> getLinkedY() {
+        return returnArray().values().stream().collect(Collectors.toCollection(LinkedList::new));
+    }
+    public String vecFileLine(int WindowX, int WindowY, LinkedList<Double> xcord, LinkedList<Double> ycord) {
+        DecimalFormat df = new DecimalFormat("#.##");
+        df.setRoundingMode(RoundingMode.CEILING);
+        System.out.println(WindowX);
+        System.out.println(WindowY);
+        String finalResponse = "";
+        finalResponse = finalResponse.concat(getShapeType());
+        for (int i = 0; i<xcord.size(); i++) {
+            finalResponse = finalResponse.concat(" " + df.format(xcord.get(i) / WindowX) + " " + df.format(ycord.get(i) / WindowY));
+        }
+        return finalResponse;
+    }
 }
