@@ -7,6 +7,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public abstract class Shape {
+    private String pencolour = "#000000";
+    private String fillcolour = "#000000";
     public abstract void addToArray(double x, double y);
     public abstract String printArray();
     public abstract Map<Double, Double> returnArray();
@@ -38,6 +40,19 @@ public abstract class Shape {
     public LinkedList<Double> getLinkedY() {
         return returnArray().values().stream().collect(Collectors.toCollection(LinkedList::new));
     }
+    public String getPenColour() {
+        return pencolour;
+    }
+    public void setPenColour(String hex) {
+        this.pencolour = hex;
+    }
+    public String getFillColour() {
+        return fillcolour;
+    }
+    public void setFillColour(String hex) {
+        this.fillcolour = hex;
+    }
+
     public String vecFileLine(int WindowX, int WindowY, LinkedList<Double> xcord, LinkedList<Double> ycord) {
         DecimalFormat df = new DecimalFormat("#.##");
         df.setRoundingMode(RoundingMode.CEILING);
@@ -45,7 +60,7 @@ public abstract class Shape {
         System.out.println(WindowY);
         String finalResponse = "";
         finalResponse = finalResponse.concat(getShapeType());
-        for (int i = 0; i<xcord.size(); i++) {
+        for (int i = 0; i < xcord.size(); i++) {
             finalResponse = finalResponse.concat(" " + df.format(xcord.get(i) / WindowX) + " " + df.format(ycord.get(i) / WindowY));
         }
         return finalResponse;
