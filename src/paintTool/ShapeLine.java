@@ -28,6 +28,7 @@ public class ShapeLine extends Shape{
         double[] ycordArr = generatePointArrayY(ycord);
         System.out.println(Arrays.toString(xcordArr));
         System.out.println(Arrays.toString(ycordArr));
+        g.setColor(convertHex2RGB(getPenColour()));
 
         if (xcordArr.length == 2) {
             g.drawLine((int) xcordArr[0], (int) ycordArr[0], (int) xcordArr[1], (int) ycordArr[1]);

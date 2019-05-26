@@ -52,6 +52,12 @@ public abstract class Shape {
     public void setFillColour(String hex) {
         this.fillcolour = hex;
     }
+    public Color convertHex2RGB(String hex) {
+        return new Color(
+                Integer.valueOf(hex.substring(1, 3), 16),
+                Integer.valueOf(hex.substring(3, 5), 16),
+                Integer.valueOf(hex.substring(5, 7), 16));
+    }
 
     public String vecFileLine(int WindowX, int WindowY, LinkedList<Double> xcord, LinkedList<Double> ycord) {
         DecimalFormat df = new DecimalFormat("#.##");

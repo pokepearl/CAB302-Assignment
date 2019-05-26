@@ -28,6 +28,7 @@ public class ShapePoint extends Shape{
         double[] ycordArr = generatePointArrayY(ycord);
         System.out.println(Arrays.toString(xcordArr));
         System.out.println(Arrays.toString(ycordArr));
+        g.setColor(convertHex2RGB(getPenColour()));
 
         if (xcordArr.length == 1) {
             g.drawLine((int) xcordArr[0], (int) ycordArr[0], (int) xcordArr[0], (int) ycordArr[0]);

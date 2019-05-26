@@ -28,6 +28,7 @@ public class ShapeEllipse extends Shape{
         double[] ycordArr = generatePointArrayY(ycord);
         System.out.println(Arrays.toString(xcordArr));
         System.out.println(Arrays.toString(ycordArr));
+        g.setColor(convertHex2RGB(getPenColour()));
 
         if (xcordArr.length == 2) {
             double width = 0;

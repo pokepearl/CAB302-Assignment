@@ -94,7 +94,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
             }
         } else if (src==btnDrawColour) {
             if (waitTime < System.currentTimeMillis()) {
-                waitTime = System.currentTimeMillis() + 2000;
+                waitTime = System.currentTimeMillis() + 5000;
                 String hex = JOptionPane.showInputDialog("Enter Pen Colour Hexadecimal Value: ");
                 this.lastPenColour = hex;
             }
