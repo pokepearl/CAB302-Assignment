@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="504ab18b-272c-4469-b894-7a5e5eb78b41" name="Default Changelist" comment="Fix errors when clicking on canvas without a shape selected.">
-      <change afterPath="$PROJECT_DIR$/src/paintTool/ShapePolygon.java" afterDir="false" />
+    <list default="true" id="504ab18b-272c-4469-b894-7a5e5eb78b41" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paintTool/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paintTool/ShapeEllipse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/ShapeEllipse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paintTool/ShapeLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/ShapeLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paintTool/ShapePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/ShapePoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paintTool/ShapeRect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/ShapeRect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/paintTool/paintGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/paintGUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,14 +39,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/paintTool/paintGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="145" column="61" selection-start-line="145" selection-start-column="61" selection-end-line="145" selection-end-column="61" />
+            <state relative-caret-position="-374">
+              <caret line="169" column="57" selection-start-line="169" selection-start-column="57" selection-end-line="169" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#11373#11374#0" expanded="true" />
-                <element signature="e#11418#11419#0" expanded="true" />
-                <element signature="e#11448#11449#0" expanded="true" />
-                <element signature="e#11494#11495#0" expanded="true" />
+                <element signature="e#11616#11617#0" expanded="true" />
+                <element signature="e#11692#11693#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -300,14 +292,7 @@
       <workItem from="1558610708248" duration="1322000" />
       <workItem from="1558656197017" duration="5009000" />
       <workItem from="1558782138892" duration="6256000" />
-      <workItem from="1558839831857" duration="6706000" />
-    </task>
-    <task id="LOCAL-00004" summary="Add Panels for elements in UI (somewhat placeholders)">
-      <created>1557485630482</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1557485630482</updated>
+      <workItem from="1558839831857" duration="6948000" />
     </task>
     <task id="LOCAL-00005" summary="Add first button to sidebar (Line Button)">
       <created>1557486569979</created>
@@ -645,7 +630,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558851139729</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Implement polygon drawing and move buttons to MouseEvent to attempt and fix double-pressing.">
+      <created>1558853602539</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1558853602539</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -681,7 +673,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45563000" />
+    <option name="totallyTimeSpent" value="45805000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -745,7 +737,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add functionality to draw eclipses/ovals." />
     <MESSAGE value="Attempt implementation of undo feature." />
     <MESSAGE value="Start implementation of 'New File' (clearing canvas and array)." />
     <MESSAGE value="Add some more unit tests." />
@@ -770,7 +761,8 @@
     <MESSAGE value="Implement drawing with the pen in a specific colour to shapes." />
     <MESSAGE value="Fix issue with VEC writer only writing data for one shape." />
     <MESSAGE value="Fix errors when clicking on canvas without a shape selected." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix errors when clicking on canvas without a shape selected." />
+    <MESSAGE value="Implement polygon drawing and move buttons to MouseEvent to attempt and fix double-pressing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement polygon drawing and move buttons to MouseEvent to attempt and fix double-pressing." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/paintTool/drawObject.java" />
@@ -883,14 +875,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/paintTool/paintGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="145" column="61" selection-start-line="145" selection-start-column="61" selection-end-line="145" selection-end-column="61" />
+        <state relative-caret-position="-374">
+          <caret line="169" column="57" selection-start-line="169" selection-start-column="57" selection-end-line="169" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#11373#11374#0" expanded="true" />
-            <element signature="e#11418#11419#0" expanded="true" />
-            <element signature="e#11448#11449#0" expanded="true" />
-            <element signature="e#11494#11495#0" expanded="true" />
+            <element signature="e#11616#11617#0" expanded="true" />
+            <element signature="e#11692#11693#0" expanded="true" />
           </folding>
         </state>
       </provider>

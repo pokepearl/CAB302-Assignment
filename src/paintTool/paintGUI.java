@@ -134,7 +134,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
 
         } else if (src == btnDrawPoly) {
             if (waitTime < System.currentTimeMillis()) {
-                waitTime = System.currentTimeMillis() + 1000;
+                waitTime = System.currentTimeMillis() + 4000;
                 this.polygonSize = 0;
                 ShapePolygon temp = new ShapePolygon();
                 temp.setShapeType("POLYGON");
@@ -160,11 +160,14 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                 }
             }
         } else if (src == btnDrawColour) {
-            String hex = JOptionPane.showInputDialog("Enter Pen Colour Hexadecimal Value: ");
-            this.lastPenColour = hex;
+            if (waitTime < System.currentTimeMillis()) {
+                waitTime = System.currentTimeMillis() + 4000;
+                String hex = JOptionPane.showInputDialog("Enter Pen Colour Hexadecimal Value: ");
+                this.lastPenColour = hex;
+            }
         } else if (src == btnDrawFill) {
             if (waitTime < System.currentTimeMillis()) {
-                waitTime = System.currentTimeMillis() + 2000;
+                waitTime = System.currentTimeMillis() + 4000;
                 String hex = JOptionPane.showInputDialog("Enter Fil Colour Hexadecimal Value: ");
                 this.lastFillColour = hex;
             }
