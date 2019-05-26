@@ -69,6 +69,7 @@ public abstract class Shape {
         for (int i = 0; i < xcord.size(); i++) {
             finalResponse = finalResponse.concat(" " + df.format(xcord.get(i) / WindowX) + " " + df.format(ycord.get(i) / WindowY));
         }
+        finalResponse = finalResponse.concat("\n");
         return finalResponse;
     }
 }

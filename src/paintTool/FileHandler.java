@@ -23,17 +23,17 @@ public class FileHandler {
             }
 
         }
-        for (int i = 0; i < shapeArray.size(); i++) {
-            Shape t2 = shapeArray.get(i);
-            //String response = "";
-            String penColour = "PEN " + t2.getPenColour();
-            this.lastPenColour = t2.getPenColour();
-            this.lastFillColour = t2.getFillColour();
-            String fillColour = "PEN " + t2.getFillColour();
-            String response = t2.vecFileLine(width, height, t2.getLinkedX(), t2.getLinkedY());
-            System.out.println(response);
-            try {
-                writer = new BufferedWriter(new FileWriter(filepath));
+        try {
+            writer = new BufferedWriter(new FileWriter(filepath));
+            for (int i = 0; i < shapeArray.size(); i++) {
+                Shape t2 = shapeArray.get(i);
+                //String response = "";
+                String penColour = "PEN " + t2.getPenColour() + "\n";
+                this.lastPenColour = t2.getPenColour();
+                this.lastFillColour = t2.getFillColour();
+                String fillColour = "FILL " + t2.getFillColour() + "\n";
+                String response = t2.vecFileLine(width, height, t2.getLinkedX(), t2.getLinkedY());
+                System.out.println(response);
                 if (lastPenColour != "#000000") {
                     writer.write(penColour);
                 }
@@ -41,16 +41,22 @@ public class FileHandler {
                     writer.write(fillColour);
                 }
                 writer.write(response);
-            } catch (IOException x) {
-                System.err.format("WriteFile error: %s%n", x);
-            } finally {
-                try {
-                    writer.close();
-                } catch (Exception e) {
             }
+
+
+        } catch (IOException x) {
+            System.err.format("WriteFile error: %s%n", x);
+
+        } finally {
+            try {
+                writer.close();
+            } catch (Exception x) {
 
             }
         }
+
+
+
     }
     public String getFileExt(File file) {
         String fileExt = null;
