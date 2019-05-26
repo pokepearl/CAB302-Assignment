@@ -23,6 +23,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
     private JButton btnDrawUndo = createButton("Undo");
     private JButton btnDrawColour = createButton("Pen Colour");
     private JButton btnDrawFill = createButton("Fill Colour");
+    private JButton btnStopPolygon = createButton("End Polygon");
     private JMenuBar menuBar;
     private JMenu file;
     private JMenuItem clear,save,load;
@@ -31,8 +32,10 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
     private long waitTime = 0;
 
     private ArrayList<Shape> savedObjects = new ArrayList<>();
-    String lastPenColour = "#000000";
-    String lastFillColour = "#000000";
+    private String lastPenColour = "#000000";
+    private String lastFillColour = "#000000";
+
+    private int allowedToEdit = 0;
 
 
     @Override
@@ -47,6 +50,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
                 temp.setPenColour(lastPenColour);
                 temp.setFillColour(lastFillColour);
                 savedObjects.add(temp);
+                this.allowedToEdit = 1;
             }
 
         } else if (src==btnDrawLine) {
@@ -57,6 +61,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
                 temp.setPenColour(lastPenColour);
                 temp.setFillColour(lastFillColour);
                 savedObjects.add(temp);
+                this.allowedToEdit = 1;
             }
 
         } else if (src==btnDrawRect) {
@@ -67,6 +72,7 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
                 temp.setPenColour(lastPenColour);
                 temp.setFillColour(lastFillColour);
                 savedObjects.add(temp);
+                this.allowedToEdit = 1;
             }
 
         } else if (src==btnDrawEcli) {
@@ -77,9 +83,19 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
                 temp.setPenColour(lastPenColour);
                 temp.setFillColour(lastFillColour);
                 savedObjects.add(temp);
+                this.allowedToEdit = 1;
             }
 
         } else if (src==btnDrawPoly) {
+            if (waitTime < System.currentTimeMillis()) {
+                waitTime = System.currentTimeMillis() + 5004;
+                ShapeEllipse temp = new ShapeEllipse();
+                temp.setShapeType("POLYGON");
+                temp.setPenColour(lastPenColour);
+                temp.setFillColour(lastFillColour);
+                savedObjects.add(temp);
+                this.allowedToEdit = 1;
+            }
 
         } else if (src==btnDrawUndo) {
             if (waitTime < System.currentTimeMillis()) {
@@ -129,33 +145,44 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
     }
     public void mouseClicked(MouseEvent e) {
         Object src = e.getSource();
-        if (waitTime < System.currentTimeMillis()) {
-            waitTime = System.currentTimeMillis() + 500;
-            int size = savedObjects.size() - 1;
-            Shape t2 = savedObjects.get(size);
-            if (t2.getShapeType().equals("LINE")) {
-                if (t2.sizeOfArray() <= 1) {
-                    t2.addToArray(e.getX(), e.getY());
-                }
+        if (allowedToEdit==1) {
+            if (waitTime < System.currentTimeMillis()) {
+                waitTime = System.currentTimeMillis() + 500;
+                int size = savedObjects.size() - 1;
+                Shape t2 = savedObjects.get(size);
+                if (t2.getShapeType().equals("LINE")) {
+                    if (t2.sizeOfArray() <= 1) {
+                        t2.addToArray(e.getX(), e.getY());
+                    } else {
+                        this.allowedToEdit = 0;
+                    }
 
-            } else if (t2.getShapeType().equals("POINT")) {
-                if (t2.sizeOfArray() < 1) {
-                    t2.addToArray(e.getX(), e.getY());
-                    System.out.println(t2.printArray());
+                } else if (t2.getShapeType().equals("POINT")) {
+                    if (t2.sizeOfArray() < 1) {
+                        t2.addToArray(e.getX(), e.getY());
+                        System.out.println(t2.printArray());
+                    } else {
+                        this.allowedToEdit = 0;
+                    }
+                }else if (t2.getShapeType().equals("RECTANGLE")) {
+                    if (t2.sizeOfArray() <= 1) {
+                        t2.addToArray(e.getX(), e.getY());
+                    } else {
+                        this.allowedToEdit = 0;
+                    }
+                } else if (t2.getShapeType().equals("ECLIPSE")) {
+                    if (t2.sizeOfArray() <= 1) {
+                        t2.addToArray(e.getX(), e.getY());
+                    } else {
+                        this.allowedToEdit = 0;
+                    }
                 }
-            }else if (t2.getShapeType().equals("RECTANGLE")) {
-                if (t2.sizeOfArray() <= 1) {
-                    t2.addToArray(e.getX(), e.getY());
-                }
-            } else if (t2.getShapeType().equals("ECLIPSE")) {
-                if (t2.sizeOfArray() <= 1) {
-                    t2.addToArray(e.getX(), e.getY());
-                }
+                t2.paintComponent(pnlEditArea.getGraphics());
+                savedObjects.remove(size);
+                savedObjects.add(t2);
             }
-            t2.paintComponent(pnlEditArea.getGraphics());
-            savedObjects.remove(size);
-            savedObjects.add(t2);
         }
+
     }
     public void mousePressed(MouseEvent e) {
 
