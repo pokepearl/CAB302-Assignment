@@ -7,11 +7,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class ShapeLine extends Shape{
-    private Map<Double, Double> points = new LinkedHashMap<>();
+    private Map<Integer, Integer> points = new LinkedHashMap<>();
     private String ShapeType;
 
     @Override
-    public void addToArray(double x, double y) {
+    public void addToArray(int x, int y) {
         points.put(x, y);
     }
 
@@ -22,21 +22,21 @@ public class ShapeLine extends Shape{
 
     @Override
     public void paintComponent(Graphics g) {
-        LinkedList<Double> xcord = points.keySet().stream().collect(Collectors.toCollection(LinkedList::new));
-        double[] xcordArr = generatePointArrayX(xcord);
-        Collection<Double> ycord = points.values();
-        double[] ycordArr = generatePointArrayY(ycord);
+        LinkedList<Integer> xcord = points.keySet().stream().collect(Collectors.toCollection(LinkedList::new));
+        int[] xcordArr = generatePointArrayX(xcord);
+        Collection<Integer> ycord = points.values();
+        int[] ycordArr = generatePointArrayY(ycord);
         System.out.println(Arrays.toString(xcordArr));
         System.out.println(Arrays.toString(ycordArr));
         g.setColor(convertHex2RGB(getPenColour()));
 
         if (xcordArr.length == 2) {
-            g.drawLine((int) xcordArr[0], (int) ycordArr[0], (int) xcordArr[1], (int) ycordArr[1]);
+            g.drawLine(xcordArr[0], ycordArr[0], xcordArr[1], ycordArr[1]);
         }
 
     }
     @Override
-    public Map<Double, Double> returnArray() {
+    public Map<Integer, Integer> returnArray() {
         return points;
     }
     @Override

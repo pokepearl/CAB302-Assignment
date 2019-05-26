@@ -7,11 +7,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class ShapePoint extends Shape{
-    private Map<Double, Double> points = new LinkedHashMap<>();
+    private Map<Integer, Integer> points = new LinkedHashMap<>();
     private String ShapeType;
 
     @Override
-    public void addToArray(double x, double y) {
+    public void addToArray(int x, int y) {
         points.put(x, y);
     }
 
@@ -22,10 +22,10 @@ public class ShapePoint extends Shape{
 
     @Override
     public void paintComponent(Graphics g) {
-        LinkedList<Double> xcord = points.keySet().stream().collect(Collectors.toCollection(LinkedList::new));
-        double[] xcordArr = generatePointArrayX(xcord);
-        Collection<Double> ycord = points.values();
-        double[] ycordArr = generatePointArrayY(ycord);
+        LinkedList<Integer> xcord = points.keySet().stream().collect(Collectors.toCollection(LinkedList::new));
+        int[] xcordArr = generatePointArrayX(xcord);
+        Collection<Integer> ycord = points.values();
+        int[] ycordArr = generatePointArrayY(ycord);
         System.out.println(Arrays.toString(xcordArr));
         System.out.println(Arrays.toString(ycordArr));
         g.setColor(convertHex2RGB(getPenColour()));
@@ -36,7 +36,7 @@ public class ShapePoint extends Shape{
 
     }
     @Override
-    public Map<Double, Double> returnArray() {
+    public Map<Integer, Integer> returnArray() {
         return points;
     }
     @Override

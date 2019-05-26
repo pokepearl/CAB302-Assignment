@@ -1,6 +1,7 @@
 package paintTool;
 
 import java.awt.*;
+import java.io.PrintWriter;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.*;
@@ -9,35 +10,35 @@ import java.util.stream.Collectors;
 public abstract class Shape {
     private String pencolour = "#000000";
     private String fillcolour = "#000000";
-    public abstract void addToArray(double x, double y);
+    public abstract void addToArray(int x, int y);
     public abstract String printArray();
-    public abstract Map<Double, Double> returnArray();
+    public abstract Map<Integer, Integer> returnArray();
     public abstract int sizeOfArray();
     public abstract void setShapeType(String value);
     public abstract String getShapeType();
     public abstract void paintComponent(Graphics g);
-    public double[] generatePointArrayX(LinkedList<Double> xcord) {
-        double[] xcordArr = new double[xcord.size()];
+    public int[] generatePointArrayX(LinkedList<Integer> xcord) {
+        int[] xcordArr = new int[xcord.size()];
         int i = 0;
-        for (Double d: xcord) {
+        for (Integer d: xcord) {
             xcordArr[i] = d;
             i++;
         }
         return xcordArr;
     }
-    public double[] generatePointArrayY(Collection<Double> ycord) {
-        double[] ycordArr = new double[ycord.size()];
+    public int[] generatePointArrayY(Collection<Integer> ycord) {
+        int[] ycordArr = new int[ycord.size()];
         int i = 0;
-        for (Double d: ycord) {
+        for (Integer d: ycord) {
             ycordArr[i] = d;
             i++;
         }
         return ycordArr;
     }
-    public LinkedList<Double> getLinkedX() {
+    public LinkedList<Integer> getLinkedX() {
         return returnArray().keySet().stream().collect(Collectors.toCollection(LinkedList::new));
     }
-    public LinkedList<Double> getLinkedY() {
+    public LinkedList<Integer> getLinkedY() {
         return returnArray().values().stream().collect(Collectors.toCollection(LinkedList::new));
     }
     public String getPenColour() {
@@ -59,7 +60,7 @@ public abstract class Shape {
                 Integer.valueOf(hex.substring(5, 7), 16));
     }
 
-    public String vecFileLine(int WindowX, int WindowY, LinkedList<Double> xcord, LinkedList<Double> ycord) {
+    public String vecFileLine(int WindowX, int WindowY, LinkedList<Integer> xcord, LinkedList<Integer> ycord) {
         DecimalFormat df = new DecimalFormat("#.##");
         df.setRoundingMode(RoundingMode.CEILING);
         System.out.println(WindowX);

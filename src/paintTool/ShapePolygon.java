@@ -1,14 +1,13 @@
 package paintTool;
 
 import java.awt.*;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class ShapeRect extends Shape{
+public class ShapePolygon extends Shape{
     private Map<Integer, Integer> points = new LinkedHashMap<>();
     private String ShapeType;
+    private int desiredLength = 0;
 
     @Override
     public void addToArray(int x, int y) {
@@ -29,25 +28,13 @@ public class ShapeRect extends Shape{
         System.out.println(Arrays.toString(xcordArr));
         System.out.println(Arrays.toString(ycordArr));
         g.setColor(convertHex2RGB(getPenColour()));
-        if (xcordArr.length == 2) {
-            double width = 0;
-            double height = 0;
-            if (xcordArr[1] > xcordArr[0]) {
-                width = xcordArr[1] - xcordArr[0];
-                height = ycordArr[1] - ycordArr[0];
-                g.drawRect((int) xcordArr[0], (int) ycordArr[0], (int) width, (int) height);
-            } else {
-                width = xcordArr[0] - xcordArr[1];
-                height = ycordArr[0] - ycordArr[1];
-                g.drawRect((int) xcordArr[1], (int) ycordArr[1], (int) width, (int) height);
 
-            }
-
-            System.out.println(width);
-            System.out.println(height);
+        if (xcordArr.length == desiredLength) {
+            g.drawPolygon(xcordArr, ycordArr, xcordArr.length);
+            //g.drawLine((int) xcordArr[0], (int) ycordArr[0], (int) xcordArr[1], (int) ycordArr[1]);
         }
-
     }
+
     @Override
     public Map<Integer, Integer> returnArray() {
         return points;
@@ -63,5 +50,12 @@ public class ShapeRect extends Shape{
     @Override
     public String getShapeType() {
         return ShapeType;
+    }
+
+    public void setDesiredLength(int length) {
+        this.desiredLength = length;
+    }
+    public int getDesiredLength() {
+        return desiredLength;
     }
 }
