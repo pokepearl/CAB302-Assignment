@@ -21,6 +21,8 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
     private JButton btnDrawEcli = createButton("Eclipse");
     private JButton btnDrawPoly = createButton("Polygon");
     private JButton btnDrawUndo = createButton("Undo");
+    private JButton btnDrawColour = createButton("Pen Colour");
+    private JButton btnDrawFill = createButton("Fill Colour");
     private JMenuBar menuBar;
     private JMenu file;
     private JMenuItem clear,save,load;
@@ -29,6 +31,8 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
     private long waitTime = 0;
 
     private ArrayList<Shape> savedObjects = new ArrayList<>();
+    String lastPenColour = "#000000";
+    String lastFillColour = "#000000";
 
 
     @Override
@@ -40,6 +44,8 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
                 waitTime = System.currentTimeMillis() + 500;
                 ShapePoint temp = new ShapePoint();
                 temp.setShapeType("POINT");
+                temp.setPenColour(lastPenColour);
+                temp.setFillColour(lastFillColour);
                 savedObjects.add(temp);
             }
 
@@ -48,6 +54,8 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
                 waitTime = System.currentTimeMillis() + 500;
                 ShapeLine temp = new ShapeLine();
                 temp.setShapeType("LINE");
+                temp.setPenColour(lastPenColour);
+                temp.setFillColour(lastFillColour);
                 savedObjects.add(temp);
             }
 
@@ -56,6 +64,8 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
                 waitTime = System.currentTimeMillis() + 500;
                 ShapeRect temp = new ShapeRect();
                 temp.setShapeType("RECTANGLE");
+                temp.setPenColour(lastPenColour);
+                temp.setFillColour(lastFillColour);
                 savedObjects.add(temp);
             }
 
@@ -64,6 +74,8 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
                 waitTime = System.currentTimeMillis() + 500;
                 ShapeEllipse temp = new ShapeEllipse();
                 temp.setShapeType("ECLIPSE");
+                temp.setPenColour(lastPenColour);
+                temp.setFillColour(lastFillColour);
                 savedObjects.add(temp);
             }
 
@@ -80,7 +92,18 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
                     t2.paintComponent(pnlEditArea.getGraphics());
                 }
             }
-
+        } else if (src==btnDrawColour) {
+            if (waitTime < System.currentTimeMillis()) {
+                waitTime = System.currentTimeMillis() + 2000;
+                String hex = JOptionPane.showInputDialog("Enter Pen Colour Hexadecimal Value: ");
+                this.lastPenColour = hex;
+            }
+        } else if (src==btnDrawFill) {
+            if (waitTime < System.currentTimeMillis()) {
+                waitTime = System.currentTimeMillis() + 2000;
+                String hex = JOptionPane.showInputDialog("Enter Fil Colour Hexadecimal Value: ");
+                this.lastFillColour = hex;
+            }
         } else if (src==clear) {
             System.out.println("JM1");
             if (waitTime < System.currentTimeMillis()) {
@@ -200,12 +223,16 @@ public class paintGUI extends JFrame implements ActionListener, Runnable, MouseL
         btnDrawEcli.addActionListener(this);
         btnDrawPoly.addActionListener(this);
         btnDrawUndo.addActionListener(this);
+        btnDrawColour.addActionListener(this);
+        btnDrawFill.addActionListener(this);
         addToPanel(pnlSidebar, btnDrawPlot, constraints, 0, 0, 2, 1);
         addToPanel(pnlSidebar, btnDrawLine, constraints, 0, 1, 2, 1);
         addToPanel(pnlSidebar, btnDrawRect, constraints, 0, 2, 2, 1);
         addToPanel(pnlSidebar, btnDrawEcli, constraints, 0, 3, 2, 1);
         addToPanel(pnlSidebar, btnDrawPoly, constraints, 0, 4, 2, 1);
         addToPanel(pnlSidebar, btnDrawUndo, constraints, 0, 5, 2, 1);
+        addToPanel(pnlSidebar, btnDrawColour, constraints, 0, 6, 2, 1);
+        addToPanel(pnlSidebar, btnDrawFill, constraints, 0, 7, 2, 1);
     }
     private JPanel createPanel(Color c) {
         JPanel temp = new JPanel();
