@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class FileHandler {
     String lastPenColour = "#000000";
-    String lastFillColour = "#ffffff";
+    String lastFillColour = "";
     paintGUI GUI = new paintGUI();
     public void startSaveFile(File filepath, ArrayList<Shape> shapeArray, int width, int height) {
         BufferedWriter writer = null;

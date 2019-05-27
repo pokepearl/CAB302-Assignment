@@ -32,7 +32,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
 
     private ArrayList<Shape> savedObjects = new ArrayList<>();
     private String lastPenColour = "#000000";
-    private String lastFillColour = "#ffffff";
+    private String lastFillColour = "OFF";
 
     private int allowedToEdit = 0;
     private int polygonSize = 0;
