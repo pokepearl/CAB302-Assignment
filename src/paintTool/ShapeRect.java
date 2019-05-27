@@ -28,17 +28,22 @@ public class ShapeRect extends Shape{
         int[] ycordArr = generatePointArrayY(ycord);
         System.out.println(Arrays.toString(xcordArr));
         System.out.println(Arrays.toString(ycordArr));
-        g.setColor(convertHex2RGB(getPenColour()));
         if (xcordArr.length == 2) {
             double width = 0;
             double height = 0;
             if (xcordArr[1] > xcordArr[0]) {
                 width = xcordArr[1] - xcordArr[0];
                 height = ycordArr[1] - ycordArr[0];
+                g.setColor(convertHex2RGB(getFillColour()));
+                g.fillRect((int) xcordArr[0], (int) ycordArr[0], (int) width, (int) height);
+                g.setColor(convertHex2RGB(getPenColour()));
                 g.drawRect((int) xcordArr[0], (int) ycordArr[0], (int) width, (int) height);
             } else {
                 width = xcordArr[0] - xcordArr[1];
                 height = ycordArr[0] - ycordArr[1];
+                g.setColor(convertHex2RGB(getFillColour()));
+                g.fillRect((int) xcordArr[1], (int) ycordArr[1], (int) width, (int) height);
+                g.setColor(convertHex2RGB(getPenColour()));
                 g.drawRect((int) xcordArr[1], (int) ycordArr[1], (int) width, (int) height);
 
             }

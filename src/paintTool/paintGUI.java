@@ -32,7 +32,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
 
     private ArrayList<Shape> savedObjects = new ArrayList<>();
     private String lastPenColour = "#000000";
-    private String lastFillColour = "#000000";
+    private String lastFillColour = "#ffffff";
 
     private int allowedToEdit = 0;
     private int polygonSize = 0;
@@ -152,6 +152,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
             if (waitTime < System.currentTimeMillis()) {
                 waitTime = System.currentTimeMillis() + 1000;
                 int size = savedObjects.size() - 1;
+                //pnlEditArea.getGraphics().dispose();
                 savedObjects.remove(size);
                 repaint();
                 for (int i = 0; i < savedObjects.size(); i++) {

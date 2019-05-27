@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public abstract class Shape {
     private String pencolour = "#000000";
-    private String fillcolour = "#000000";
+    private String fillcolour = "#ffffff";
     public abstract void addToArray(int x, int y);
     public abstract String printArray();
     public abstract Map<Integer, Integer> returnArray();

@@ -30,8 +30,10 @@ public class ShapePolygon extends Shape{
         g.setColor(convertHex2RGB(getPenColour()));
 
         if (xcordArr.length == desiredLength) {
+            g.setColor(convertHex2RGB(getFillColour()));
+            g.fillPolygon(xcordArr, ycordArr, xcordArr.length);
+            g.setColor(convertHex2RGB(getPenColour()));
             g.drawPolygon(xcordArr, ycordArr, xcordArr.length);
-            //g.drawLine((int) xcordArr[0], (int) ycordArr[0], (int) xcordArr[1], (int) ycordArr[1]);
         }
     }
 
