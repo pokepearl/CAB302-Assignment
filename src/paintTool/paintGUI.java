@@ -195,7 +195,13 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
             if (resultVal == JFileChooser.APPROVE_OPTION) {
                 File selFile = fileSelect.getSelectedFile();
                 FileHandler fileOperation = new FileHandler();
-                fileOperation.startOpenFile(selFile, savedObjects, pnlEditArea.getWidth(), pnlEditArea.getHeight());
+                try {
+                    fileOperation.startOpenFile(selFile, savedObjects, pnlEditArea.getWidth(), pnlEditArea.getHeight());
+                } catch (Exception exte) {
+
+                }
+
+
             }
         }
     }

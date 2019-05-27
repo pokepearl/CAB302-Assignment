@@ -1,9 +1,6 @@
 package paintTool;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
 
@@ -56,8 +53,13 @@ public class FileHandler {
         }
     }
 
-    public void startOpenFile(File filepath, ArrayList<Shape> shapeArray, int width, int height) {
+    public void startOpenFile(File filepath, ArrayList<Shape> shapeArray, int width, int height) throws Exception {
+        BufferedReader reader = new BufferedReader(new FileReader(filepath));
 
+        String cache;
+        while ((cache = reader.readLine()) != null ) {
+            System.out.println(cache);
+        }
     }
 
     public String getFileExt(File file) {
