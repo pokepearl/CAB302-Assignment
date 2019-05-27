@@ -54,10 +54,12 @@ public class FileHandler {
 
             }
         }
+    }
 
-
+    public void startOpenFile(File filepath, ArrayList<Shape> shapeArray, int width, int height) {
 
     }
+
     public String getFileExt(File file) {
         String fileExt = null;
         String str = file.getName();

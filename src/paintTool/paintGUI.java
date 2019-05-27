@@ -188,10 +188,15 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                 File selFile = fileSelect.getSelectedFile();
                 FileHandler fileOperation = new FileHandler();
                 fileOperation.startSaveFile(selFile, savedObjects, pnlEditArea.getWidth(), pnlEditArea.getHeight());
-
             }
         } else if (src == load) {
+            fileSelect.setFileFilter(new vecFilter());
             int resultVal = fileSelect.showOpenDialog(this);
+            if (resultVal == JFileChooser.APPROVE_OPTION) {
+                File selFile = fileSelect.getSelectedFile();
+                FileHandler fileOperation = new FileHandler();
+                fileOperation.startOpenFile(selFile, savedObjects, pnlEditArea.getWidth(), pnlEditArea.getHeight());
+            }
         }
     }
     public void mouseReleased(MouseEvent e) {
