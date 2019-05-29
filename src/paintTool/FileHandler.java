@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class FileHandler {
     String lastPenColour = "#000000";
-    String lastFillColour = "";
+    String lastFillColour = "OFF";
     paintGUI GUI = new paintGUI();
     public void startSaveFile(File filepath, ArrayList<Shape> shapeArray, int width, int height) {
         BufferedWriter writer = null;
@@ -34,7 +34,7 @@ public class FileHandler {
                 if (lastPenColour != "#000000") {
                     writer.write(penColour);
                 }
-                if (lastFillColour != "#000000") {
+                if (lastFillColour != "OFF") {
                     writer.write(fillColour);
                 }
                 writer.write(response);
@@ -58,7 +58,15 @@ public class FileHandler {
 
         String cache;
         while ((cache = reader.readLine()) != null ) {
-            System.out.println(cache);
+            String[] elements = cache.split(" ");
+            switch(elements[0]) {
+                case "LINE":
+                    System.out.println("Printing Line");
+                    break;
+                default:
+                    System.out.println("Unsupported");
+                    break;
+            }
         }
     }
 
@@ -71,5 +79,12 @@ public class FileHandler {
             fileExt = str.substring(i+1).toLowerCase();
         }
         return fileExt;
+    }
+
+}
+
+class ShapeEnum {
+    public enum shapeEnum {
+        LINE,
     }
 }
