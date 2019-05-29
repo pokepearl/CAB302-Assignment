@@ -1,5 +1,6 @@
 package paintTool;
 
+import javax.swing.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -53,22 +54,7 @@ public class FileHandler {
         }
     }
 
-    public void startOpenFile(File filepath, ArrayList<Shape> shapeArray, int width, int height) throws Exception {
-        BufferedReader reader = new BufferedReader(new FileReader(filepath));
 
-        String cache;
-        while ((cache = reader.readLine()) != null ) {
-            String[] elements = cache.split(" ");
-            switch(elements[0]) {
-                case "LINE":
-                    System.out.println("Printing Line");
-                    break;
-                default:
-                    System.out.println("Unsupported");
-                    break;
-            }
-        }
-    }
 
     public String getFileExt(File file) {
         String fileExt = null;

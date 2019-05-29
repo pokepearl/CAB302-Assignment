@@ -73,4 +73,8 @@ public abstract class Shape {
         finalResponse = finalResponse.concat("\n");
         return finalResponse;
     }
+    public void paintSet() {
+        paintGUI pg = new paintGUI();
+        paintComponent(pg.pnlEditArea.getGraphics());
+    }
 }

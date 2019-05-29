@@ -6,7 +6,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 
 public class paintGUI extends JFrame implements Runnable, MouseListener {
@@ -30,7 +32,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
 
     private long waitTime = 0;
 
-    private ArrayList<Shape> savedObjects = new ArrayList<>();
+    public ArrayList<Shape> savedObjects = new ArrayList<>();
     private String lastPenColour = "#000000";
     private String lastFillColour = "OFF";
 
@@ -85,6 +87,20 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
             }
         }
 
+    }
+    public void paintObj() {
+        System.out.println("Enter Pr");
+        Shape temp = savedObjects.get(savedObjects.size() - 1);
+        System.out.println("Enter Pr");
+        System.out.println(temp.printArray());
+        System.out.println(temp.getShapeType());
+        temp.paintComponent(pnlEditArea.getGraphics());
+        System.out.println("Enter Pr");
+        savedObjects.remove(savedObjects.size() - 1);
+        System.out.println("Enter Pr");
+        savedObjects.add(temp);
+        System.out.println("Enter Pr");
+        System.out.println("Exit Pr");
     }
     public void mousePressed(MouseEvent e) {
         Object src = e.getSource();
@@ -196,7 +212,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                 File selFile = fileSelect.getSelectedFile();
                 FileHandler fileOperation = new FileHandler();
                 try {
-                    fileOperation.startOpenFile(selFile, savedObjects, pnlEditArea.getWidth(), pnlEditArea.getHeight());
+                    startOpenFile(selFile, savedObjects, pnlEditArea.getWidth(), pnlEditArea.getHeight());
                 } catch (Exception exte) {
 
                 }
@@ -307,5 +323,26 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
     }
     public int getCanvasY() {
         return pnlEditArea.getHeight();
+    }
+    public void startOpenFile(File filepath, ArrayList<Shape> shapeArray, int width, int height) throws Exception {
+        BufferedReader reader = new BufferedReader(new FileReader(filepath));
+        String cache;
+        while ((cache = reader.readLine()) != null ) {
+            String[] elements = cache.split(" ");
+            switch(elements[0]) {
+                case "LINE":
+                    Shape temp = new ShapeLine();
+                    temp.setShapeType("LINE");
+                    temp.setPenColour(lastPenColour);
+                    temp.setFillColour(lastFillColour);
+                    temp.addToArray((int) (width * Double.valueOf(elements[1])), (int) (height * Double.valueOf(elements[2])));
+                    temp.addToArray((int) (width * Double.valueOf(elements[3])), (int) (height * Double.valueOf(elements[4])));
+                    temp.paintComponent(pnlEditArea.getGraphics());
+                    break;
+                default:
+                    System.out.println("Unsupported");
+                    break;
+            }
+        }
     }
 }

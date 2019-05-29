@@ -22,9 +22,10 @@ public class ShapeLine extends Shape{
 
     @Override
     public void paintComponent(Graphics g) {
-        LinkedList<Integer> xcord = points.keySet().stream().collect(Collectors.toCollection(LinkedList::new));
+        System.out.println("StPaint");
+        LinkedList<Integer> xcord = getLinkedX();
         int[] xcordArr = generatePointArrayX(xcord);
-        Collection<Integer> ycord = points.values();
+        LinkedList<Integer> ycord = getLinkedY();
         int[] ycordArr = generatePointArrayY(ycord);
         System.out.println(Arrays.toString(xcordArr));
         System.out.println(Arrays.toString(ycordArr));
