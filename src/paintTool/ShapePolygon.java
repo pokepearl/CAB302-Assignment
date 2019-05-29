@@ -12,6 +12,8 @@ public class ShapePolygon extends Shape{
     @Override
     public void addToArray(int x, int y) {
         points.put(x, y);
+        System.out.println("qX " + x);
+        System.out.println("qY " + y);
     }
 
     @Override
@@ -22,21 +24,21 @@ public class ShapePolygon extends Shape{
     @Override
     public void paintComponent(Graphics g) {
         LinkedList<Integer> xcord = points.keySet().stream().collect(Collectors.toCollection(LinkedList::new));
+        System.out.println(xcord.toString());
         int[] xcordArr = generatePointArrayX(xcord);
         Collection<Integer> ycord = points.values();
         int[] ycordArr = generatePointArrayY(ycord);
-        System.out.println(Arrays.toString(xcordArr));
-        System.out.println(Arrays.toString(ycordArr));
+        //System.out.println(Arrays.toString(xcordArr));
+        //System.out.println(Arrays.toString(ycordArr));
         g.setColor(convertHex2RGB(getPenColour()));
 
-        if (xcordArr.length == desiredLength) {
             if (getFillColour() != "OFF") {
                 g.setColor(convertHex2RGB(getFillColour()));
-                g.fillPolygon(xcordArr, ycordArr, xcordArr.length);
+                g.fillPolygon(xcordArr, ycordArr, xcord.size());
             }
             g.setColor(convertHex2RGB(getPenColour()));
-            g.drawPolygon(xcordArr, ycordArr, xcordArr.length);
-        }
+            g.drawPolygon(xcordArr, ycordArr, xcord.size());
+
     }
 
     @Override

@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class paintGUI extends JFrame implements Runnable, MouseListener {
     private static final int WIDTH = 691;
@@ -355,6 +356,35 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                     tempEllipse.addToArray((int) (width * Double.valueOf(elements[3])), (int) (height * Double.valueOf(elements[4])));
                     tempEllipse.paintComponent(pnlEditArea.getGraphics());
                     savedObjects.add(tempEllipse);
+                    break;
+                case "POLYGON":
+                    ShapePolygon tempPoly = new ShapePolygon();
+                    tempPoly.setShapeType("POLYGON");
+                    tempPoly.setPenColour(lastPenColour);
+                    tempPoly.setFillColour(lastFillColour);
+                    LinkedList<Integer> xcord = new LinkedList<>();
+                    LinkedList<Integer> ycord = new LinkedList<>();
+                    int polySize = elements.length;
+                    int arrSize = 0;
+                    for (int i = 1; i < polySize; i++) {
+                        if ((i & 1) == 1 ) {
+                            arrSize = arrSize + 1;
+                            System.out.println(xcord.size());
+                            xcord.add((int) (width * Double.valueOf(elements[i])));
+                        } else {
+                            System.out.println(ycord.size());
+                            ycord.add((int) (height * Double.valueOf(elements[i])));
+                        }
+                    }
+                    for (int i = 0; i<arrSize; i++) {
+                        System.out.println("PX " + xcord.get(i));
+                        System.out.println("PY " + ycord.get(i));
+                        tempPoly.addToArray(xcord.get(i), ycord.get(i));
+                    }
+                    System.out.println(tempPoly.printArray());
+                    tempPoly.setDesiredLength(xcord.size() - 1);
+                    tempPoly.paintComponent(pnlEditArea.getGraphics());
+                    savedObjects.add(tempPoly);
                     break;
                 default:
                     System.out.println("Unsupported");

@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="504ab18b-272c-4469-b894-7a5e5eb78b41" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paintTool/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paintTool/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/paintTool/ShapeLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/ShapeLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paintTool/ShapePolygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/ShapePolygon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/paintTool/paintGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/paintTool/paintGUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,7 +21,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/paintTool/Shape.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
+            <state relative-caret-position="1190">
               <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -35,24 +33,45 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/paintTool/paintGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2214">
-              <caret line="325" selection-start-line="325" selection-end-line="325" />
+            <state relative-caret-position="276">
+              <caret line="378" column="45" selection-start-line="378" selection-start-column="45" selection-end-line="378" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#12701#12702#0" expanded="true" />
-                <element signature="e#12777#12778#0" expanded="true" />
+                <element signature="e#12774#12775#0" expanded="true" />
+                <element signature="e#12850#12851#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/paintTool/FileHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/paintTool/FileHandler.java">
+        <entry file="file://$PROJECT_DIR$/src/paintTool/ShapePolygon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="89" column="5" lean-forward="true" selection-start-line="56" selection-start-column="4" selection-end-line="89" selection-end-column="5" />
+            <state relative-caret-position="340">
+              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1373#1374#0" expanded="true" />
+                <element signature="e#1402#1403#0" expanded="true" />
+                <element signature="e#1541#1542#0" expanded="true" />
+                <element signature="e#1579#1580#0" expanded="true" />
+                <element signature="e#1628#1629#0" expanded="true" />
+                <element signature="e#1660#1661#0" expanded="true" />
+                <element signature="e#1708#1709#0" expanded="true" />
+                <element signature="e#1751#1752#0" expanded="true" />
+                <element signature="e#1787#1788#0" expanded="true" />
+                <element signature="e#1823#1824#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/paintTool/ShapeLine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="136">
+              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,11 +120,11 @@
         <option value="$PROJECT_DIR$/src/paintTool/ShapePoint.java" />
         <option value="$PROJECT_DIR$/src/paintTool/ShapeEllipse.java" />
         <option value="$PROJECT_DIR$/src/paintTool/ShapeRect.java" />
-        <option value="$PROJECT_DIR$/src/paintTool/ShapePolygon.java" />
-        <option value="$PROJECT_DIR$/src/paintTool/ShapeLine.java" />
         <option value="$PROJECT_DIR$/src/paintTool/Shape.java" />
-        <option value="$PROJECT_DIR$/src/paintTool/paintGUI.java" />
         <option value="$PROJECT_DIR$/src/paintTool/FileHandler.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/ShapeLine.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/paintGUI.java" />
+        <option value="$PROJECT_DIR$/src/paintTool/ShapePolygon.java" />
       </list>
     </option>
   </component>
@@ -236,21 +255,7 @@
       <workItem from="1558874566074" duration="217000" />
       <workItem from="1558929551119" duration="168000" />
       <workItem from="1558929749405" duration="3139000" />
-      <workItem from="1559128776147" duration="4627000" />
-    </task>
-    <task id="LOCAL-00011" summary="Add event listeners to currently implemented buttons.">
-      <created>1557579442830</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1557579442831</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Comment out bottom bar (not currently in use).">
-      <created>1557579548016</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1557579548016</updated>
+      <workItem from="1559128776147" duration="7135000" />
     </task>
     <task id="LOCAL-00013" summary="Modify default width/height vars to set the main drawing area to a square.">
       <created>1557579743165</created>
@@ -581,7 +586,21 @@
       <option name="project" value="LOCAL" />
       <updated>1559130050630</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Move opened file parser and renderer to main class to fix issues with paint operations locking up.">
+      <created>1559133533909</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1559133533909</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Implement VEC renderer to the point where example 1 renders successfully.">
+      <created>1559133823652</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1559133823652</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -617,7 +636,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54609000" />
+    <option name="totallyTimeSpent" value="57117000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -681,8 +700,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create initial elements for file saving/loading." />
-    <MESSAGE value="Get the file selected by the save box." />
     <MESSAGE value="Start implementing the generation of the instructions for the file." />
     <MESSAGE value="Implement abstracted function to generate the instruction to draw the shape." />
     <MESSAGE value="Rewrite shape point array generation to not shuffle order of points." />
@@ -706,7 +723,9 @@
     <MESSAGE value="Start adding BufferedReader to VEC reader." />
     <MESSAGE value="Add option to not draw filled shape, set by default." />
     <MESSAGE value="Start splitting loaded files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Start splitting loaded files." />
+    <MESSAGE value="Move opened file parser and renderer to main class to fix issues with paint operations locking up." />
+    <MESSAGE value="Implement VEC renderer to the point where example 1 renders successfully." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement VEC renderer to the point where example 1 renders successfully." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/paintTool/drawObject.java" />
@@ -763,10 +782,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/Shape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/ShapeLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/FileHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/paintTool/paintGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="378" column="45" selection-start-line="378" selection-start-column="45" selection-end-line="378" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#12774#12775#0" expanded="true" />
+            <element signature="e#12850#12851#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/paintTool/ShapePolygon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        <state relative-caret-position="340">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
           <folding>
             <element signature="e#1373#1374#0" expanded="true" />
             <element signature="e#1402#1403#0" expanded="true" />
@@ -778,48 +839,6 @@
             <element signature="e#1751#1752#0" expanded="true" />
             <element signature="e#1787#1788#0" expanded="true" />
             <element signature="e#1823#1824#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/paintTool/Shape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/paintTool/ShapeLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/paintTool/paintGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="325" selection-start-line="325" selection-end-line="325" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#12701#12702#0" expanded="true" />
-            <element signature="e#12777#12778#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/paintTool/FileHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="89" column="5" lean-forward="true" selection-start-line="56" selection-start-column="4" selection-end-line="89" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
