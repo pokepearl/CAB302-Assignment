@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class paintGUI extends JFrame implements Runnable, MouseListener {
     private static final int WIDTH = 691;
-    private static final int HEIGHT = 560;
+    private static final int HEIGHT = 580;
     private JPanel pnlSidebar;
     private JPanel pnlBottombar;
     public JPanel pnlEditArea;
@@ -330,14 +330,31 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
         while ((cache = reader.readLine()) != null ) {
             String[] elements = cache.split(" ");
             switch(elements[0]) {
+                case "PEN":
+                    this.lastPenColour = elements[1];
+                    break;
+                case "FILL":
+                    this.lastFillColour = elements[1];
+                    break;
                 case "LINE":
-                    Shape temp = new ShapeLine();
-                    temp.setShapeType("LINE");
-                    temp.setPenColour(lastPenColour);
-                    temp.setFillColour(lastFillColour);
-                    temp.addToArray((int) (width * Double.valueOf(elements[1])), (int) (height * Double.valueOf(elements[2])));
-                    temp.addToArray((int) (width * Double.valueOf(elements[3])), (int) (height * Double.valueOf(elements[4])));
-                    temp.paintComponent(pnlEditArea.getGraphics());
+                    Shape tempLine = new ShapeLine();
+                    tempLine.setShapeType("LINE");
+                    tempLine.setPenColour(lastPenColour);
+                    tempLine.setFillColour(lastFillColour);
+                    tempLine.addToArray((int) (width * Double.valueOf(elements[1])), (int) (height * Double.valueOf(elements[2])));
+                    tempLine.addToArray((int) (width * Double.valueOf(elements[3])), (int) (height * Double.valueOf(elements[4])));
+                    tempLine.paintComponent(pnlEditArea.getGraphics());
+                    savedObjects.add(tempLine);
+                    break;
+                case "ELLIPSE":
+                    Shape tempEllipse = new ShapeEllipse();
+                    tempEllipse.setShapeType("ELLIPSE");
+                    tempEllipse.setPenColour(lastPenColour);
+                    tempEllipse.setFillColour(lastFillColour);
+                    tempEllipse.addToArray((int) (width * Double.valueOf(elements[1])), (int) (height * Double.valueOf(elements[2])));
+                    tempEllipse.addToArray((int) (width * Double.valueOf(elements[3])), (int) (height * Double.valueOf(elements[4])));
+                    tempEllipse.paintComponent(pnlEditArea.getGraphics());
+                    savedObjects.add(tempEllipse);
                     break;
                 default:
                     System.out.println("Unsupported");

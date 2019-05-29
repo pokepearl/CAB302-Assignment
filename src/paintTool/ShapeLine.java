@@ -22,13 +22,10 @@ public class ShapeLine extends Shape{
 
     @Override
     public void paintComponent(Graphics g) {
-        System.out.println("StPaint");
         LinkedList<Integer> xcord = getLinkedX();
         int[] xcordArr = generatePointArrayX(xcord);
         LinkedList<Integer> ycord = getLinkedY();
         int[] ycordArr = generatePointArrayY(ycord);
-        System.out.println(Arrays.toString(xcordArr));
-        System.out.println(Arrays.toString(ycordArr));
         g.setColor(convertHex2RGB(getPenColour()));
 
         if (xcordArr.length == 2) {
