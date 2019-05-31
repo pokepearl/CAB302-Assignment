@@ -41,6 +41,10 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
     private int polygonSize = 0;
     private int runClear = 0;
 
+    /**
+     * Given a mouse click inside the window, determine which part of the window was selected and act accordingly.
+     * @param e MouseEvent registered to specific UI elements.
+     */
     public void mouseClicked(MouseEvent e) {
         Object src = e.getSource();
         if (allowedToEdit==1) {
@@ -88,6 +92,11 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
         }
 
     }
+
+    /**
+     * Determine which operation to perform when one of the mouse buttons is pressed down.
+     * @param e MouseEvent registered to specific UI elements.
+     */
     public void mousePressed(MouseEvent e) {
         Object src = e.getSource();
         if (src == btnDrawPlot) {
@@ -146,7 +155,6 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                 savedObjects.add(temp);
                 this.polygonSize = Integer.valueOf(points);
                 temp.setDesiredLength(Integer.valueOf(points));
-                System.out.println(polygonSize);
                 this.allowedToEdit = 1;
             }
 
@@ -175,12 +183,9 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                 this.lastFillColour = hex;
             }
         } else if (src == clear) {
-            System.out.println("JM1");
             if (waitTime < System.currentTimeMillis()) {
                 waitTime = System.currentTimeMillis() + 1000;
-                System.out.println(savedObjects.size());
                 savedObjects.clear();
-                System.out.println(savedObjects.size());
                 repaint();
             }
         } else if (src == save) {
@@ -200,9 +205,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                     repaint();
                     this.runClear = 0;
                 }
-
                 File selFile = fileSelect.getSelectedFile();
-                FileHandler fileOperation = new FileHandler();
                 try {
                     startOpenFile(selFile, savedObjects, pnlEditArea.getWidth(), pnlEditArea.getHeight());
                 } catch (Exception exte) {
@@ -213,24 +216,42 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
             }
         }
     }
+
+    /**
+     * Check if mouse button has been released. Not used, only implemented as required by the Extend.
+     * @param e MouseEvent registered to specific UI elements.
+     */
     public void mouseReleased(MouseEvent e) {
 
     }
+    /**
+     * Check if mouse has entered a specific region. Not used, only implemented as required by the Extend.
+     * @param e MouseEvent registered to specific UI elements.
+     */
     public void mouseEntered(MouseEvent e) {
 
     }
+    /**
+     * Check if mouse has left a specific region. Not used, only implemented as required by the Extend.
+     * @param e MouseEvent registered to specific UI elements.
+     */
     public void mouseExited(MouseEvent e) {
 
     }
 
+    /**
+     * Initial render function, initialises the UI and sidebar.
+     */
     @Override
     public void run() {
         createGUI();
         generateSidebarButton();
-        System.out.println(pnlSidebar.getWidth());
-        System.out.println(pnlEditArea.getWidth());
-        System.out.println(pnlEditArea.getHeight());
     }
+
+    /**
+     * Creates the base elements of the UI. Initialises the BorderLayout, creates the panels, adds the MenuBar and
+     * the appropriate listeners.
+     */
     private void createGUI() {
         setSize(WIDTH,HEIGHT);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -238,7 +259,6 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
         pnlBottombar = createPanel(Color.GRAY);
         pnlSidebar = createPanel(Color.LIGHT_GRAY);
         pnlEditArea = createPanel(Color.WHITE);
-        //getContentPane().add(pnlBottombar,BorderLayout.SOUTH);
         getContentPane().add(pnlSidebar,BorderLayout.WEST);
         getContentPane().add(pnlEditArea,BorderLayout.CENTER);
         createMenuBar();
@@ -249,6 +269,9 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
 
     }
 
+    /**
+     * Creates the MenuBar and its sub-items, links them together and attaches the Mouse Listener
+     */
     private void createMenuBar() {
         menuBar = new JMenuBar();
         file = new JMenu("File");
@@ -263,6 +286,10 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
         save.addMouseListener(this);
         load.addMouseListener(this);
     }
+
+    /**
+     * Constructs the GridBagLayout of sidebar buttons, attaches the Mouse Listener and adds them to the panel.
+     */
     private void generateSidebarButton() {
         GridBagLayout layout = new GridBagLayout();
         pnlSidebar.setLayout(layout);
@@ -287,16 +314,39 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
         addToPanel(pnlSidebar, btnDrawColour, constraints, 0, 6, 2, 1);
         addToPanel(pnlSidebar, btnDrawFill, constraints, 0, 7, 2, 1);
     }
+
+    /**
+     * Creates a JPanel object for the main UI and sets the background colour.
+     * @param c Desired Color of the panel.
+     * @return JPanel object with the appropriate background colour.
+     */
     private JPanel createPanel(Color c) {
         JPanel temp = new JPanel();
         temp.setBackground(c);
         return temp;
     }
+
+    /**
+     * Creates a JButton object with the specified text.
+     * @param str Desired text to be displayed on the button.
+     * @return JButton object with the appropriate text.
+     */
     private JButton createButton(String str) {
         JButton temp = new JButton(str);
         temp.addMouseListener(this);
         return temp;
     }
+
+    /**
+     * Attaches a given component to a panel object within certain constraints.
+     * @param jp The JPanel to attach the object to.
+     * @param c The component to be attached to the panel.
+     * @param constraints GridBsgConstraints element containing the positioning for the component.
+     * @param x X Position within the panel.
+     * @param y Y Position within the panel.
+     * @param w Width of the component within the panel.
+     * @param h Height of the component within the panel.
+     */
     private void addToPanel(JPanel jp,Component c, GridBagConstraints constraints,int x, int y, int w, int h) {
         constraints.gridx = x;
         constraints.gridy = y;
@@ -305,17 +355,23 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
         jp.add(c, constraints);
     }
 
+    /**
+     * Main Function, creates a paintGUI option and runs the run function.
+     * @param args Parameters.
+     */
     public static void main(String[] args) {
         paintGUI GUI = new paintGUI();
         GUI.run();
     }
 
-    public int getCanvasX() {
-        return pnlEditArea.getWidth();
-    }
-    public int getCanvasY() {
-        return pnlEditArea.getHeight();
-    }
+    /**
+     * Opens a file to read from and creates shapes based on the lines within the file.
+     * @param filepath File object containing the path to the file holding the instructions.
+     * @param shapeArray Array to store the created shapes in.
+     * @param width Width of the canvas region the shapes are drawn in.
+     * @param height Height of the canvas region the shapes are drawn in.
+     * @throws Exception General exception thrown if an issue occurs with the BufferedReader
+     */
     public void startOpenFile(File filepath, ArrayList<Shape> shapeArray, int width, int height) throws Exception {
         this.lastPenColour = "#000000";
         this.lastFillColour = "OFF";
@@ -339,7 +395,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                     tempLine.addToArray((int) (width * Double.valueOf(elements[1])), (int) (height * Double.valueOf(elements[2])));
                     tempLine.addToArray((int) (width * Double.valueOf(elements[3])), (int) (height * Double.valueOf(elements[4])));
                     tempLine.paintComponent(pnlEditArea.getGraphics());
-                    savedObjects.add(tempLine);
+                    shapeArray.add(tempLine);
                     break;
                 case "ELLIPSE":
                     Shape tempEllipse = new ShapeEllipse();
@@ -349,7 +405,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                     tempEllipse.addToArray((int) (width * Double.valueOf(elements[1])), (int) (height * Double.valueOf(elements[2])));
                     tempEllipse.addToArray((int) (width * Double.valueOf(elements[3])), (int) (height * Double.valueOf(elements[4])));
                     tempEllipse.paintComponent(pnlEditArea.getGraphics());
-                    savedObjects.add(tempEllipse);
+                    shapeArray.add(tempEllipse);
                     break;
                 case "POLYGON":
                     ShapePolygon tempPoly = new ShapePolygon();
@@ -358,34 +414,25 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                     tempPoly.setFillColour(lastFillColour);
                     LinkedList<Integer> xcord = new LinkedList<>();
                     LinkedList<Integer> ycord = new LinkedList<>();
-
                     String[] localElement = new String[elements.length-1];
-                    System.out.println(elements.length);
+
                     for (int i = 1; i < elements.length; i++) {
                         localElement[i-1] = elements[i];
                     }
-                    System.out.println(localElement.length);
                     int polySize = localElement.length;
-                    int arrSize = 0;
                     for (int i = 0; i < polySize; i++) {
                         if ((i & 1) == 0 ) {
-                            arrSize = arrSize + 1;
-                            System.out.println(xcord.size());
                             xcord.add((int) (width * Double.valueOf(localElement[i])));
                         } else {
-                            arrSize = arrSize + 1;
-                            System.out.println(ycord.size());
                             ycord.add((int) (height * Double.valueOf(localElement[i])));
                         }
                     }
                     for (int i = 0; i<xcord.size(); i++) {
-                        System.out.println("PX " + xcord.get(i));
-                        System.out.println("PY " + ycord.get(i));
                         tempPoly.addToArray(xcord.get(i), ycord.get(i));
                     }
                     tempPoly.setDesiredLength(polySize / 2);
                     tempPoly.paintComponent(pnlEditArea.getGraphics());
-                    savedObjects.add(tempPoly);
+                    shapeArray.add(tempPoly);
                     break;
                 case "RECTANGLE":
                     Shape tempRect = new ShapeRect();
@@ -395,7 +442,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                     tempRect.addToArray((int) (width * Double.valueOf(elements[1])), (int) (height * Double.valueOf(elements[2])));
                     tempRect.addToArray((int) (width * Double.valueOf(elements[3])), (int) (height * Double.valueOf(elements[4])));
                     tempRect.paintComponent(pnlEditArea.getGraphics());
-                    savedObjects.add(tempRect);
+                    shapeArray.add(tempRect);
                     break;
                 case "PLOT":
                     Shape tempPlot = new ShapePoint();
@@ -404,7 +451,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                     tempPlot.setFillColour(lastFillColour);
                     tempPlot.addToArray((int) (width * Double.valueOf(elements[1])), (int) (height * Double.valueOf(elements[2])));
                     tempPlot.paintComponent(pnlEditArea.getGraphics());
-                    savedObjects.add(tempPlot);
+                    shapeArray.add(tempPlot);
                     break;
                 default:
                     System.out.println("Unsupported");
