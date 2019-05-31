@@ -45,13 +45,14 @@ public class ShapePolygon extends Shape{
         int[] xcordArr = generatePointArrayX(pointX);
         int[] ycordArr = generatePointArrayY(pointY);
         g.setColor(convertHex2RGB(getPenColour()));
-        //ToDo Fix this
-        if (!getFillColour().equals("OFF")) { //Check if fill colour isn't set to off and fill if needed.
+        if (xcordArr.length == getDesiredLength()) {
+            if (!getFillColour().equals("OFF")) { //Check if fill colour isn't set to off and fill if needed.
                 g.setColor(convertHex2RGB(getFillColour()));
                 g.fillPolygon(xcordArr, ycordArr, getDesiredLength());
             }
             g.setColor(convertHex2RGB(getPenColour()));
             g.drawPolygon(xcordArr, ycordArr, getDesiredLength());
+        }
 
     }
     /**
