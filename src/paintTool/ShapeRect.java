@@ -31,12 +31,12 @@ public class ShapeRect extends Shape{
         int[] xcordArr = generatePointArrayX(pointX);
         int[] ycordArr = generatePointArrayY(pointY);
         if (xcordArr.length == 2) {
-            double width = 0;
-            double height = 0;
+            int width = 0;
+            int height = 0;
             if (xcordArr[1] > xcordArr[0]) {
                 width = xcordArr[1] - xcordArr[0];
                 height = ycordArr[1] - ycordArr[0];
-                if (getFillColour() != "OFF") {
+                if (!getFillColour().equals("OFF")) {
                     g.setColor(convertHex2RGB(getFillColour()));
                     g.fillRect((int) xcordArr[0], (int) ycordArr[0], (int) width, (int) height);
                 }
@@ -45,7 +45,7 @@ public class ShapeRect extends Shape{
             } else {
                 width = xcordArr[0] - xcordArr[1];
                 height = ycordArr[0] - ycordArr[1];
-                if (getFillColour() != "OFF") {
+                if (!getFillColour().equals("OFF")) {
                     g.setColor(convertHex2RGB(getFillColour()));
                     g.fillRect((int) xcordArr[1], (int) ycordArr[1], (int) width, (int) height);
                 }

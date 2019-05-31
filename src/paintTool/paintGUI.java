@@ -39,7 +39,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
 
     private int allowedToEdit = 0;
     private int polygonSize = 0;
-    private int buttonBlock = 0;
+    private int runClear = 0;
 
     public void mouseClicked(MouseEvent e) {
         Object src = e.getSource();
@@ -55,7 +55,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                         this.allowedToEdit = 0;
                     }
 
-                } else if (t2.getShapeType().equals("POINT")) {
+                } else if (t2.getShapeType().equals("PLOT")) {
                     if (t2.sizeOfArray() < 1) {
                         t2.addToArray(e.getX(), e.getY());
                     } else {
@@ -94,7 +94,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
             if (waitTime < System.currentTimeMillis()) {
                 waitTime = System.currentTimeMillis() + 500;
                 ShapePoint temp = new ShapePoint();
-                temp.setShapeType("POINT");
+                temp.setShapeType("PLOT");
                 temp.setPenColour(lastPenColour);
                 temp.setFillColour(lastFillColour);
                 savedObjects.add(temp);
@@ -195,6 +195,12 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
             fileSelect.setFileFilter(new vecFilter());
             int resultVal = fileSelect.showOpenDialog(this);
             if (resultVal == JFileChooser.APPROVE_OPTION) {
+                if (runClear == 1) {
+                    this.savedObjects.clear();
+                    repaint();
+                    this.runClear = 0;
+                }
+
                 File selFile = fileSelect.getSelectedFile();
                 FileHandler fileOperation = new FileHandler();
                 try {
@@ -380,6 +386,25 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                     tempPoly.setDesiredLength(polySize / 2);
                     tempPoly.paintComponent(pnlEditArea.getGraphics());
                     savedObjects.add(tempPoly);
+                    break;
+                case "RECTANGLE":
+                    Shape tempRect = new ShapeRect();
+                    tempRect.setShapeType("RECTANGLE");
+                    tempRect.setPenColour(lastPenColour);
+                    tempRect.setFillColour(lastFillColour);
+                    tempRect.addToArray((int) (width * Double.valueOf(elements[1])), (int) (height * Double.valueOf(elements[2])));
+                    tempRect.addToArray((int) (width * Double.valueOf(elements[3])), (int) (height * Double.valueOf(elements[4])));
+                    tempRect.paintComponent(pnlEditArea.getGraphics());
+                    savedObjects.add(tempRect);
+                    break;
+                case "PLOT":
+                    Shape tempPlot = new ShapePoint();
+                    tempPlot.setShapeType("PLOT");
+                    tempPlot.setPenColour(lastPenColour);
+                    tempPlot.setFillColour(lastFillColour);
+                    tempPlot.addToArray((int) (width * Double.valueOf(elements[1])), (int) (height * Double.valueOf(elements[2])));
+                    tempPlot.paintComponent(pnlEditArea.getGraphics());
+                    savedObjects.add(tempPlot);
                     break;
                 default:
                     System.out.println("Unsupported");

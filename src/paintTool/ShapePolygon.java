@@ -31,7 +31,7 @@ public class ShapePolygon extends Shape{
         int[] ycordArr = generatePointArrayY(pointY);
         g.setColor(convertHex2RGB(getPenColour()));
 
-            if (getFillColour() != "OFF") {
+        if (!getFillColour().equals("OFF")) {
                 g.setColor(convertHex2RGB(getFillColour()));
                 g.fillPolygon(xcordArr, ycordArr, getDesiredLength());
             }
