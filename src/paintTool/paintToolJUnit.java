@@ -6,30 +6,36 @@ import paintTool.ShapePoint;
 public class paintToolJUnit {
 
     @Test
-    public void testPointContent() {
+    public void testPointContentX() {
         ShapePoint test = new ShapePoint();
         test.addToArray(102, 225);
-        assertEquals("{102.0=225.0}", test.printArray());
+        assertEquals("[102]", test.printArrayX());
+    }
+    @Test
+    public void testPointContentY() {
+        ShapePoint test = new ShapePoint();
+        test.addToArray(102, 225);
+        assertEquals("[255]", test.printArrayY());
     }
     @Test
     public void testPointContentFalse() {
         ShapePoint test = new ShapePoint();
         test.addToArray(102, 225);
-        assertNotEquals("{102.0=227.0}", test.printArray());
+        assertNotEquals("[103]", test.printArrayX());
     }
     @Test
     public void testPointContentMulti() {
         ShapePoint test = new ShapePoint();
         test.addToArray(102, 225);
         test.addToArray(95, 102);
-        assertEquals("{102.0=225.0, 95.0=102.0}", test.printArray());
+        assertEquals("[102, 95]", test.printArrayX());
     }
     @Test
     public void testPointContentMultiFalse() {
         ShapePoint test = new ShapePoint();
         test.addToArray(102, 225);
         test.addToArray(95, 102);
-        assertNotEquals("{102.0=225.0}, {95.0=105.0}", test.printArray());
+        assertNotEquals("[103, 93]", test.printArrayX());
     }
 
     @Test

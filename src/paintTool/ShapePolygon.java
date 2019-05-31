@@ -5,7 +5,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class ShapePolygon extends Shape{
-    private Map<Integer, Integer> points = new LinkedHashMap<>();
     private LinkedList<Integer> pointX = new LinkedList<>();
     private LinkedList<Integer> pointY = new LinkedList<>();
     private String ShapeType;
@@ -15,24 +14,21 @@ public class ShapePolygon extends Shape{
     public void addToArray(int x, int y) {
         pointX.add(x);
         pointY.add(y);
-        //System.out.println("qX " + x);
-        //System.out.println("qY " + y);
     }
 
     @Override
-    public String printArray() {
-        return points.toString();
+    public String printArrayX() {
+        return pointX.toString();
+    }
+    @Override
+    public String printArrayY() {
+        return pointY.toString();
     }
 
     @Override
     public void paintComponent(Graphics g) {
-        //LinkedList<Integer> xcord = getLinkedX();
-        //System.out.println(xcord.toString());
         int[] xcordArr = generatePointArrayX(pointX);
-        //LinkedList<Integer> ycord = getLinkedY();
         int[] ycordArr = generatePointArrayY(pointY);
-        System.out.println(Arrays.toString(xcordArr));
-        System.out.println(Arrays.toString(ycordArr));
         g.setColor(convertHex2RGB(getPenColour()));
 
             if (getFillColour() != "OFF") {
@@ -45,12 +41,16 @@ public class ShapePolygon extends Shape{
     }
 
     @Override
-    public Map<Integer, Integer> returnArray() {
-        return points;
+    public LinkedList<Integer> returnArrayX() {
+        return pointX;
+    }
+    @Override
+    public LinkedList<Integer> returnArrayY() {
+        return pointY;
     }
     @Override
     public int sizeOfArray(){
-        return points.size();
+        return pointX.size();
     }
     @Override
     public void setShapeType(String value) {

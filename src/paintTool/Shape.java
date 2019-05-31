@@ -11,8 +11,10 @@ public abstract class Shape {
     private String pencolour = "#000000";
     private String fillcolour = "OFF";
     public abstract void addToArray(int x, int y);
-    public abstract String printArray();
-    public abstract Map<Integer, Integer> returnArray();
+    public abstract String printArrayX();
+    public abstract String printArrayY();
+    public abstract LinkedList<Integer> returnArrayX();
+    public abstract LinkedList<Integer> returnArrayY();
     public abstract int sizeOfArray();
     public abstract void setShapeType(String value);
     public abstract String getShapeType();
@@ -21,7 +23,6 @@ public abstract class Shape {
         int[] xcordArr = new int[xcord.size()];
         int i = 0;
         for (Integer d: xcord) {
-            System.out.println("XX " + d);
             xcordArr[i] = d;
             i++;
         }
@@ -35,12 +36,6 @@ public abstract class Shape {
             i++;
         }
         return ycordArr;
-    }
-    public LinkedList<Integer> getLinkedX() {
-        return returnArray().keySet().stream().collect(Collectors.toCollection(LinkedList::new));
-    }
-    public LinkedList<Integer> getLinkedY() {
-        return returnArray().values().stream().collect(Collectors.toCollection(LinkedList::new));
     }
     public String getPenColour() {
         return pencolour;

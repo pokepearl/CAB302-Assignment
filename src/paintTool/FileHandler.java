@@ -30,7 +30,7 @@ public class FileHandler {
                 this.lastPenColour = t2.getPenColour();
                 this.lastFillColour = t2.getFillColour();
                 String fillColour = "FILL " + t2.getFillColour() + "\n";
-                String response = t2.vecFileLine(width, height, t2.getLinkedX(), t2.getLinkedY());
+                String response = t2.vecFileLine(width, height, t2.returnArrayX(), t2.returnArrayY());
                 System.out.println(response);
                 if (lastPenColour != "#000000") {
                     writer.write(penColour);

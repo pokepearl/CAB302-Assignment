@@ -58,7 +58,6 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                 } else if (t2.getShapeType().equals("POINT")) {
                     if (t2.sizeOfArray() < 1) {
                         t2.addToArray(e.getX(), e.getY());
-                        System.out.println(t2.printArray());
                     } else {
                         this.allowedToEdit = 0;
                     }
@@ -88,20 +87,6 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
             }
         }
 
-    }
-    public void paintObj() {
-        System.out.println("Enter Pr");
-        Shape temp = savedObjects.get(savedObjects.size() - 1);
-        System.out.println("Enter Pr");
-        System.out.println(temp.printArray());
-        System.out.println(temp.getShapeType());
-        temp.paintComponent(pnlEditArea.getGraphics());
-        System.out.println("Enter Pr");
-        savedObjects.remove(savedObjects.size() - 1);
-        System.out.println("Enter Pr");
-        savedObjects.add(temp);
-        System.out.println("Enter Pr");
-        System.out.println("Exit Pr");
     }
     public void mousePressed(MouseEvent e) {
         Object src = e.getSource();
@@ -389,7 +374,6 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                         System.out.println("PY " + ycord.get(i));
                         tempPoly.addToArray(xcord.get(i), ycord.get(i));
                     }
-                    System.out.println(tempPoly.printArray());
                     tempPoly.setDesiredLength(polySize / 2);
                     tempPoly.paintComponent(pnlEditArea.getGraphics());
                     savedObjects.add(tempPoly);
