@@ -17,7 +17,7 @@ public class vecFilter extends FileFilter {
         FileHandler fileTool = new FileHandler();
         String fileExt = fileTool.getFileExt(pathname);
         if (fileExt != null) {
-            if (fileExt.equals("vec") || fileExt.equals("VEC")) {
+            if (fileExt.equals("vec") || fileExt.equals("VEC")) { //If extension equals either VEC types.
                 return true;
             } else {
                 return false;
