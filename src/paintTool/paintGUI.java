@@ -311,10 +311,13 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
         return pnlEditArea.getHeight();
     }
     public void startOpenFile(File filepath, ArrayList<Shape> shapeArray, int width, int height) throws Exception {
+        this.lastPenColour = "#000000";
+        this.lastFillColour = "OFF";
         BufferedReader reader = new BufferedReader(new FileReader(filepath));
         String cache;
         while ((cache = reader.readLine()) != null ) {
             String[] elements = cache.split(" ");
+            elements[0] = elements[0].toUpperCase();
             switch(elements[0]) {
                 case "PEN":
                     this.lastPenColour = elements[1];
