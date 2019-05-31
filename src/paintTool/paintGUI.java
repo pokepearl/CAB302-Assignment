@@ -364,25 +364,33 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                     tempPoly.setFillColour(lastFillColour);
                     LinkedList<Integer> xcord = new LinkedList<>();
                     LinkedList<Integer> ycord = new LinkedList<>();
-                    int polySize = elements.length;
+
+                    String[] localElement = new String[elements.length-1];
+                    System.out.println(elements.length);
+                    for (int i = 1; i < elements.length; i++) {
+                        localElement[i-1] = elements[i];
+                    }
+                    System.out.println(localElement.length);
+                    int polySize = localElement.length;
                     int arrSize = 0;
-                    for (int i = 1; i < polySize; i++) {
-                        if ((i & 1) == 1 ) {
+                    for (int i = 0; i < polySize; i++) {
+                        if ((i & 1) == 0 ) {
                             arrSize = arrSize + 1;
                             System.out.println(xcord.size());
-                            xcord.add((int) (width * Double.valueOf(elements[i])));
+                            xcord.add((int) (width * Double.valueOf(localElement[i])));
                         } else {
+                            arrSize = arrSize + 1;
                             System.out.println(ycord.size());
-                            ycord.add((int) (height * Double.valueOf(elements[i])));
+                            ycord.add((int) (height * Double.valueOf(localElement[i])));
                         }
                     }
-                    for (int i = 0; i<arrSize; i++) {
+                    for (int i = 0; i<xcord.size(); i++) {
                         System.out.println("PX " + xcord.get(i));
                         System.out.println("PY " + ycord.get(i));
                         tempPoly.addToArray(xcord.get(i), ycord.get(i));
                     }
                     System.out.println(tempPoly.printArray());
-                    tempPoly.setDesiredLength(xcord.size() - 1);
+                    tempPoly.setDesiredLength(polySize / 2);
                     tempPoly.paintComponent(pnlEditArea.getGraphics());
                     savedObjects.add(tempPoly);
                     break;

@@ -21,6 +21,7 @@ public abstract class Shape {
         int[] xcordArr = new int[xcord.size()];
         int i = 0;
         for (Integer d: xcord) {
+            System.out.println("XX " + d);
             xcordArr[i] = d;
             i++;
         }

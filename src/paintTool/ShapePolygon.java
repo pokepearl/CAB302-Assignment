@@ -6,14 +6,17 @@ import java.util.stream.Collectors;
 
 public class ShapePolygon extends Shape{
     private Map<Integer, Integer> points = new LinkedHashMap<>();
+    private LinkedList<Integer> pointX = new LinkedList<>();
+    private LinkedList<Integer> pointY = new LinkedList<>();
     private String ShapeType;
     private int desiredLength = 0;
 
     @Override
     public void addToArray(int x, int y) {
-        points.put(x, y);
-        System.out.println("qX " + x);
-        System.out.println("qY " + y);
+        pointX.add(x);
+        pointY.add(y);
+        //System.out.println("qX " + x);
+        //System.out.println("qY " + y);
     }
 
     @Override
@@ -23,21 +26,21 @@ public class ShapePolygon extends Shape{
 
     @Override
     public void paintComponent(Graphics g) {
-        LinkedList<Integer> xcord = points.keySet().stream().collect(Collectors.toCollection(LinkedList::new));
-        System.out.println(xcord.toString());
-        int[] xcordArr = generatePointArrayX(xcord);
-        Collection<Integer> ycord = points.values();
-        int[] ycordArr = generatePointArrayY(ycord);
-        //System.out.println(Arrays.toString(xcordArr));
-        //System.out.println(Arrays.toString(ycordArr));
+        //LinkedList<Integer> xcord = getLinkedX();
+        //System.out.println(xcord.toString());
+        int[] xcordArr = generatePointArrayX(pointX);
+        //LinkedList<Integer> ycord = getLinkedY();
+        int[] ycordArr = generatePointArrayY(pointY);
+        System.out.println(Arrays.toString(xcordArr));
+        System.out.println(Arrays.toString(ycordArr));
         g.setColor(convertHex2RGB(getPenColour()));
 
             if (getFillColour() != "OFF") {
                 g.setColor(convertHex2RGB(getFillColour()));
-                g.fillPolygon(xcordArr, ycordArr, xcord.size());
+                g.fillPolygon(xcordArr, ycordArr, getDesiredLength());
             }
             g.setColor(convertHex2RGB(getPenColour()));
-            g.drawPolygon(xcordArr, ycordArr, xcord.size());
+            g.drawPolygon(xcordArr, ycordArr, getDesiredLength());
 
     }
 
