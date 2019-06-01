@@ -13,9 +13,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class paintGUI extends JFrame implements Runnable, MouseListener {
-    private static final int WIDTH = 691;
+    private static final int WIDTH = 691; //Define default window sizes
     private static final int HEIGHT = 580;
-    private JPanel pnlSidebar;
+    private JPanel pnlSidebar; //Initialise the different components of the window.
     private JPanel pnlBottombar;
     public JPanel pnlEditArea;
     private JButton btnDrawPlot = createButton("Plot");
@@ -31,13 +31,13 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
     private JMenuItem clear,save,load;
     private JFileChooser fileSelect = new JFileChooser();
 
-    private long waitTime = 0;
+    private long waitTime = 0; //Initialise variable, used for attempting to mitigate some debounce issues in the code.
 
-    public ArrayList<Shape> savedObjects = new ArrayList<>();
-    private String lastPenColour = "#000000";
+    public ArrayList<Shape> savedObjects = new ArrayList<>(); //Array holding all currently drawn shapes.
+    private String lastPenColour = "#000000"; //Default pen & fill colours.
     private String lastFillColour = "OFF";
 
-    private int allowedToEdit = 0;
+    private int allowedToEdit = 0; //Variables for restricting certain functions of the code.
     private int polygonSize = 0;
     private int runClear = 0;
 
@@ -49,8 +49,12 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
         Object src = e.getSource();
         if (allowedToEdit==1) {
             if (waitTime < System.currentTimeMillis()) {
-                waitTime = System.currentTimeMillis() + 500;
+                waitTime = System.currentTimeMillis() + 500; //Increment the debounce block by 500ms.
                 int size = savedObjects.size() - 1;
+                /*
+                Grabs the last written shape from the array, checks its identifier and adds the current mouse
+                coordinates if the Shape doesn't already have enough points.
+                 */
                 Shape t2 = savedObjects.get(size);
                 if (t2.getShapeType().equals("LINE")) {
                     if (t2.sizeOfArray() <= 1) {
@@ -85,6 +89,9 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                     }
 
                 }
+                /*
+                Draw the new points on screen, remove the old shape from the array and insert the new one.
+                 */
                 t2.paintComponent(pnlEditArea.getGraphics());
                 savedObjects.remove(size);
                 savedObjects.add(t2);
@@ -98,6 +105,10 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
      * @param e MouseEvent registered to specific UI elements.
      */
     public void mousePressed(MouseEvent e) {
+        /*
+        Checks which sidebar button has been pressed, initialises a new Shape variable, sets the appropriate information
+        and adds to the main Shape array.
+         */
         Object src = e.getSource();
         if (src == btnDrawPlot) {
             if (waitTime < System.currentTimeMillis()) {
@@ -142,7 +153,9 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                 savedObjects.add(temp);
                 this.allowedToEdit = 1;
             }
-
+            /*
+            Polygon asks for input as to how many vertices it should draw.
+             */
         } else if (src == btnDrawPoly) {
             if (waitTime < System.currentTimeMillis()) {
                 waitTime = System.currentTimeMillis() + 4000;
@@ -157,7 +170,10 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                 temp.setDesiredLength(Integer.valueOf(points));
                 this.allowedToEdit = 1;
             }
-
+            /*
+            Does not fully work. Only listens to the button (no key combo).
+            Removes the shape from the array but does not redraw the screen to remove it from display.
+             */
         } else if (src == btnDrawUndo) {
             if (waitTime < System.currentTimeMillis()) {
                 waitTime = System.currentTimeMillis() + 1000;
@@ -195,6 +211,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
                 FileHandler fileOperation = new FileHandler();
                 File selFile = fileSelect.getSelectedFile();
                 String suffix = ".vec";
+                // Appends ".vec" to the file path if the user didn't include it.
                 if (fileOperation.getFileExt(fileSelect.getSelectedFile()) != "vec") {
                     selFile = new File(fileSelect.getSelectedFile() + suffix);
                     fileOperation.startSaveFile(selFile, savedObjects, pnlEditArea.getWidth(), pnlEditArea.getHeight());
@@ -206,6 +223,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
             fileSelect.setFileFilter(new vecFilter());
             int resultVal = fileSelect.showOpenDialog(this);
             if (resultVal == JFileChooser.APPROVE_OPTION) {
+                //Clear the display before importing new shapes.
                 if (runClear == 1) {
                     this.savedObjects.clear();
                     repaint();
@@ -259,6 +277,9 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
      * the appropriate listeners.
      */
     private void createGUI() {
+        /*
+        Initialise the UI with the default parameters and attach the appropriate panels and menus.
+         */
         setSize(WIDTH,HEIGHT);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
@@ -279,6 +300,9 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
      * Creates the MenuBar and its sub-items, links them together and attaches the Mouse Listener
      */
     private void createMenuBar() {
+        /*
+        Attach the menu dropdowns and options to the Menu Bar.
+         */
         menuBar = new JMenuBar();
         file = new JMenu("File");
         clear = new JMenuItem("New");
@@ -288,7 +312,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
         file.add(save);
         file.add(load);
         menuBar.add(file);
-        clear.addMouseListener(this);
+        clear.addMouseListener(this); //Register the Mouse Listeners.
         save.addMouseListener(this);
         load.addMouseListener(this);
     }
@@ -297,6 +321,9 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
      * Constructs the GridBagLayout of sidebar buttons, attaches the Mouse Listener and adds them to the panel.
      */
     private void generateSidebarButton() {
+        /*
+        Create structure for the sidebar. Attaches the Mouse Listener and adds them to the panel.
+         */
         GridBagLayout layout = new GridBagLayout();
         pnlSidebar.setLayout(layout);
         GridBagConstraints constraints = new GridBagConstraints();
@@ -379,14 +406,14 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
      * @throws Exception General exception thrown if an issue occurs with the BufferedReader
      */
     public void startOpenFile(File filepath, ArrayList<Shape> shapeArray, int width, int height) throws Exception {
-        this.lastPenColour = "#000000";
+        this.lastPenColour = "#000000"; //Reset default colour parameters.
         this.lastFillColour = "OFF";
         BufferedReader reader = new BufferedReader(new FileReader(filepath));
         String cache;
-        while ((cache = reader.readLine()) != null ) {
-            String[] elements = cache.split(" ");
-            elements[0] = elements[0].toUpperCase();
-            switch(elements[0]) {
+        while ((cache = reader.readLine()) != null ) { //Loop through each line in the file.
+            String[] elements = cache.split(" "); //Split by space.
+            elements[0] = elements[0].toUpperCase(); //Force upper case due to some case insensitive options.
+            switch(elements[0]) { //Read 1st element of the line and create the appropriate shape.
                 case "PEN":
                     this.lastPenColour = elements[1];
                     break;
