@@ -192,9 +192,15 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
             fileSelect.setFileFilter(new vecFilter());
             int resultVal = fileSelect.showSaveDialog(this);
             if (resultVal == JFileChooser.APPROVE_OPTION) {
-                File selFile = fileSelect.getSelectedFile();
                 FileHandler fileOperation = new FileHandler();
-                fileOperation.startSaveFile(selFile, savedObjects, pnlEditArea.getWidth(), pnlEditArea.getHeight());
+                File selFile = fileSelect.getSelectedFile();
+                String suffix = ".vec";
+                if (fileOperation.getFileExt(fileSelect.getSelectedFile()) != "vec") {
+                    selFile = new File(fileSelect.getSelectedFile() + suffix);
+                    fileOperation.startSaveFile(selFile, savedObjects, pnlEditArea.getWidth(), pnlEditArea.getHeight());
+                } else {
+                    fileOperation.startSaveFile(selFile, savedObjects, pnlEditArea.getWidth(), pnlEditArea.getHeight());
+                }
             }
         } else if (src == load) {
             fileSelect.setFileFilter(new vecFilter());
