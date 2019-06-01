@@ -21,7 +21,7 @@ public class paintGUI extends JFrame implements Runnable, MouseListener {
     private JButton btnDrawPlot = createButton("Plot");
     private JButton btnDrawLine = createButton("Line");
     private JButton btnDrawRect = createButton("Rectangle");
-    private JButton btnDrawEcli = createButton("Eclipse");
+    private JButton btnDrawEcli = createButton("Ellipse");
     private JButton btnDrawPoly = createButton("Polygon");
     private JButton btnDrawUndo = createButton("Undo");
     private JButton btnDrawColour = createButton("Pen Colour");
